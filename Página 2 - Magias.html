@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ficha Dungeons & Dragons</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        h1, h2 {
+            color: #333;
+        }
+        p {
+            margin: 10px 0;
+        }
+        input[type="text"] {
+            width: 300px;
+            padding: 8px;
+            margin-left: 10px;
+        }
+    </style>    
+</head>
+<body>
+    <div id="atributosMagia">
+        <h2>Atributos de Magia</h2> 
+        <p>Atributo de Invocação</p>
+        <p>CD de Magia <input type="text" id="input_cdMagia" placeholder="Digite a CD de magia aqui..."> </p>
+        <p>Bônus de Ataque Mágico <input type="text" id="input_bonusAtaqueMagico" placeholder="Digite o bônus de ataque mágico aqui..."> </p>
+        <p>Espaços de Magia <input type="text" id="input_espacosMagia" placeholder="Digite os espaços de magia aqui..."> </p>
+        <p>Magias Conhecidas <input type="text" id="input_magiasConhecidas" placeholder="Digite as magias conhecidas aqui..."> </p>
+        <p>Magias Preparadas <input type="text" id="input_magiasPreparadas" placeholder="Digite as magias preparadas aqui..."> </p>
+
+    </div>
+   <div id="magias">
+        <h2>Magias</h2>
+        <div id="truques">
+            <h3>Truques: </h3>
+            <div id="truque1">
+                <h4>Truque 1</h4>
+                <p>Nome do Truque <input type="text" id="input_nomeTruque1" placeholder="Digite o nome do truque aqui..."> </p>
+                <p>Nível do Truque <input type="text" id="input_nivelTruque1" placeholder="Digite o nível do truque aqui..."> </p>
+                <p>Tempo de Conjuração <input type="text" id="input_tempoConjuracaoTruque1" placeholder="Digite o tempo de conjuração aqui..."> </p>
+                <p>Alcance <input type="text" id="input_alcanceTruque1" placeholder="Digite o alcance aqui..."> </p>
+                <p>Componentes <input type="text" id="input_componentesTruque1" placeholder="Digite os componentes aqui..."> </p>
+                <p>Duração <input type="text" id="input_duracaoTruque1" placeholder="Digite a duração aqui..."> </p>
+                <p>Efeito <input type="text" id="input_efeitoTruque1" placeholder="Digite o efeito aqui..."> </p>
+            </div>
+       </div>
+        <div id="magiasNivel1">
+            <h3>Magias de Nível 1: </h3>
+            <div id="magiaNivel1_1">
+                <h4>Magia 1</h4>
+                <p>Nome da Magia <input type="text" id="input_nomeMagia1" placeholder="Digite o nome da magia aqui..."> </p>
+                <p>Nível da Magia <input type="text" id="input_nivelMagia1" placeholder="Digite o nível da magia aqui..."> </p>
+                <p>Tempo de Conjuração <input type="text" id="input_tempoConjuracaoMagia1" placeholder="Digite o tempo de conjuração aqui..."> </p>
+                <p>Alcance <input type="text" id="input_alcanceMagia1" placeholder="Digite o alcance aqui..."> </p>
+                <p>Componentes <input type="text" id="input_componentesMagia1" placeholder="Digite os componentes aqui..."> </p>
+                <p>Duração <input type="text" id="input_duracaoMagia1" placeholder="Digite a duração aqui..."> </p>
+                <p>Efeito <input type="text" id="input_efeitoMagia1" placeholder="Digite o efeito aqui..."> </p>
+            </div>
+            <div id="magiaNivel1_2">
+                <h4>Magia 2</h4>
+                <p>Nome da Magia <input type="text" id="input_nomeMagia1" placeholder="Digite o nome da magia aqui..."> </p>
+                <p>Nível da Magia <input type="text" id="input_nivelMagia1" placeholder="Digite o nível da magia aqui..."> </p>
+                <p>Tempo de Conjuração <input type="text" id="input_tempoConjuracaoMagia1" placeholder="Digite o tempo de conjuração aqui..."> </p>
+                <p>Alcance <input type="text" id="input_alcanceMagia1" placeholder="Digite o alcance aqui..."> </p>
+                <p>Componentes <input type="text" id="input_componentesMagia1" placeholder="Digite os componentes aqui..."> </p>
+                <p>Duração <input type="text" id="input_duracaoMagia1" placeholder="Digite a duração aqui..."> </p>
+                <p>Efeito <input type="text" id="input_efeitoMagia1" placeholder="Digite o efeito aqui..."> </p>
+            </div>
+        </div>
+        <div id="magiasNivel2">
+            <h3>Magias de Nível 2: </h3>
+            <div id="magiaNivel2_1">
+                <h4>Magia 1</h4>
+                <p>Nome da Magia <input type="text" id="input_nomeMagia1" placeholder="Digite o nome da magia aqui..."> </p>
+                <p>Nível da Magia <input type="text" id="input_nivelMagia1" placeholder="Digite o nível da magia aqui..."> </p>
+                <p>Tempo de Conjuração <input type="text" id="input_tempoConjuracaoMagia1" placeholder="Digite o tempo de conjuração aqui..."> </p>
+                <p>Alcance <input type="text" id="input_alcanceMagia1" placeholder="Digite o alcance aqui..."> </p>
+                <p>Componentes <input type="text" id="input_componentesMagia1" placeholder="Digite os componentes aqui..."> </p>
+                <p>Duração <input type="text" id="input_duracaoMagia1" placeholder="Digite a duração aqui..."> </p>
+                <p>Efeito <input type="text" id="input_efeitoMagia1" placeholder="Digite o efeito aqui..."> </p>
+            </div>
+            <div id="magiaNivel2_2">
+                <h4>Magia 2</h4>
+                <p>Nome da Magia <input type="text" id="input_nomeMagia1" placeholder="Digite o nome da magia aqui..."> </p>
+                <p>Nível da Magia <input type="text" id="input_nivelMagia1" placeholder="Digite o nível da magia aqui..."> </p>
+                <p>Tempo de Conjuração <input type="text" id="input_tempoConjuracaoMagia1" placeholder="Digite o tempo de conjuração aqui..."> </p>
+                <p>Alcance <input type="text" id="input_alcanceMagia1" placeholder="Digite o alcance aqui..."> </p>
+                <p>Componentes <input type="text" id="input_componentesMagia1" placeholder="Digite os componentes aqui..."> </p>
+                <p>Duração <input type="text" id="input_duracaoMagia1" placeholder="Digite a duração aqui..."> </p>
+                <p>Efeito <input type="text" id="input_efeitoMagia1" placeholder="Digite o efeito aqui..."> </p>
+            </div>
+        </div>
+        <div id="magiasNivel3">
+            <h3>Magias de Nível 3: </h3>
+            <div id="magiaNivel3_1">
+                <h4>Magia 1</h4>
+                <p>Nome da Magia <input type="text" id="input_nomeMagia1" placeholder="Digite o nome da magia aqui..."> </p>
+                <p>Nível da Magia <input type="text" id="input_nivelMagia1" placeholder="Digite o nível da magia aqui..."> </p>
+                <p>Tempo de Conjuração <input type="text" id="input_tempoConjuracaoMagia1" placeholder="Digite o tempo de conjuração aqui..."> </p>
+                <p>Alcance <input type="text" id="input_alcanceMagia1" placeholder="Digite o alcance aqui..."> </p>
+                <p>Componentes <input type="text" id="input_componentesMagia1" placeholder="Digite os componentes aqui..."> </p>
+                <p>Duração <input type="text" id="input_duracaoMagia1" placeholder="Digite a duração aqui..."> </p>
+                <p>Efeito <input type="text" id="input_efeitoMagia1" placeholder="Digite o efeito aqui..."> </p>
+            </div>
+            <div id="magiaNivel3_2">
+                <h4>Magia 2</h4>
+                <p>Nome da Magia <input type="text" id="input_nomeMagia1" placeholder="Digite o nome da magia aqui..."> </p>
+                <p>Nível da Magia <input type="text" id="input_nivelMagia1" placeholder="Digite o nível da magia aqui..."> </p>
+                <p>Tempo de Conjuração <input type="text" id="input_tempoConjuracaoMagia1" placeholder="Digite o tempo de conjuração aqui..."> </p>
+                <p>Alcance <input type="text" id="input_alcanceMagia1" placeholder="Digite o alcance aqui..."> </p>
+                <p>Componentes <input type="text" id="input_componentesMagia1" placeholder="Digite os componentes aqui..."> </p>
+                <p>Duração <input type="text" id="input_duracaoMagia1" placeholder="Digite a duração aqui..."> </p>
+                <p>Efeito <input type="text" id="input_efeitoMagia1" placeholder="Digite o efeito aqui..."> </p>
+            </div>
+        </div>
+        <div id="magiasNivel4">
+            <h3>Magias de Nível 4: </h3>
+            <div id="magiaNivel4_1">
+                <h4>Magia 1</h4>
+                <p>Nome da Magia <input type="text" id="input_nomeMagia1" placeholder="Digite o nome da magia aqui..."> </p>
+                <p>Nível da Magia <input type="text" id="input_nivelMagia1" placeholder="Digite o nível da magia aqui..."> </p>
+                <p>Tempo de Conjuração <input type="text" id="input_tempoConjuracaoMagia1" placeholder="Digite o tempo de conjuração aqui..."> </p>
+                <p>Alcance <input type="text" id="input_alcanceMagia1" placeholder="Digite o alcance aqui..."> </p>
+                <p>Componentes <input type="text" id="input_componentesMagia1" placeholder="Digite os componentes aqui..."> </p>
+                <p>Duração <input type="text" id="input_duracaoMagia1" placeholder="Digite a duração aqui..."> </p>
+                <p>Efeito <input type="text" id="input_efeitoMagia1" placeholder="Digite o efeito aqui..."> </p>
+            </div>
+            <div id="magiaNivel4_2">
+                <h4>Magia 2</h4>
+                <p>Nome da Magia <input type="text" id="input_nomeMagia1" placeholder="Digite o nome da magia aqui..."> </p>
+                <p>Nível da Magia <input type="text" id="input_nivelMagia1" placeholder="Digite o nível da magia aqui..."> </p>
+                <p>Tempo de Conjuração <input type="text" id="input_tempoConjuracaoMagia1" placeholder="Digite o tempo de conjuração aqui..."> </p>
+                <p>Alcance <input type="text" id="input_alcanceMagia1" placeholder="Digite o alcance aqui..."> </p>
+                <p>Componentes <input type="text" id="input_componentesMagia1" placeholder="Digite os componentes aqui..."> </p>
+                <p>Duração <input type="text" id="input_duracaoMagia1" placeholder="Digite a duração aqui..."> </p>
+                <p>Efeito <input type="text" id="input_efeitoMagia1" placeholder="Digite o efeito aqui..."> </p>
+            </div>
+        </div>
+   </div>
+</body>
+</html>
