@@ -21,274 +21,198 @@
             width: 300px;
             padding: 8px;
             margin-left: 10px;
+            border-radius: 50px;
+        }
+        .conteiner {
+            margin-bottom: 20px;
+            padding-bottom: 30px;
+            padding-top: 30px;
+            padding-left: 30px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            display: block;
+            margin-left: auto;
+            margin-right: 20px;
+        }
+        .column {
+            margin-bottom: 20px;
+            padding-bottom: 30px;
+            padding-top: 20px;
+            padding-left: 30px;
+            padding-right: 20px;
+            background-color: #d4d4d4;
+            border-radius: 10px;
+            width: 45%;
+            flex-direction: column;
+            align-items: right;
+            justify-content: center;
+            display: inline-block;
+            vertical-align: top;
+            height: 550px;
         }
     </style>    
 </head>
 <body>
-    <script id="scriptInforcaoBasicas">
-        // Função para calcular o modificador de habilidade
-        let nomePersonagem = document.getElementById("input_nomePersonagem").value;
-        let raça = document.getElementById("input_raça").value;
-        let classe = document.getElementById("input_classe").value;
-        let subclasse = document.getElementById("input_subclasse").value;
-        let background = document.getElementById("input_background").value;
-        let alinhamento = document.getElementById("input_alinhamento").value;
-        let idade = document.getElementById("input_idade").value;
-        let altura = document.getElementById("input_altura").value;
-        let peso = document.getElementById("input_peso").value;
-        let sexo = document.getElementById("input_sexo").value;
-        let nomeJogador = document.getElementById("input_nomeJogador").value;
-        let experiencia = document.getElementById("input_experiencia").value;
-        let nivel = document.getElementById("input_nivel").value;
-        let xpProximoNivel = document.getElementById("input_xpProximoNivel").value;
-        let xpTotal = document.getElementById("input_xpTotal").value;
-     </script>
-    <script id="scriptAtributosCombate">
-        // Função para calcular os atributos de combate   
-        let pvMaximo = document.getElementById("input_pvMaximo").value;
-        let pvAtual = document.getElementById("input_pvAtual").value;
-        let pvTemporario = document.getElementById("input_pvTemporario").value;
-        let ca = document.getElementById("input_ca").value;
-        let iniciativa = document.getElementById("input_iniciativa").value;
-        let deslocamento = document.getElementById("input_deslocamento").value;
-        let bonusProficiência = document.getElementById("input_proficiencia").value;
-        let pericias = document.getElementById("input_pericias").value;
-        let testesResistencia = document.getElementById("input_testesResistencia").value;
-    </script>
-    <script id="scriptAtributos">
-        // Função para calcular os atributos
-        let forca = document.getElementById("input_forca").value;
-        let forcaModificador = (forca - 10) / 2;
-        let destreza = document.getElementById("input_destreza").value;
-        let destrezaModificador = (destreza - 10) / 2;
-        let constituicao = document.getElementById("input_constituicao").value;
-        let constituicaoModificador = (constituicao - 10) / 2;
-        let inteligencia = document.getElementById("input_inteligencia").value;
-        let inteligenciaModificador = (inteligencia - 10) / 2;
-        let sabedoria = document.getElementById("input_sabedoria").value;
-        let sabedoriaModificador = (sabedoria - 10) / 2;
-        let carisma = document.getElementById("input_carisma").value;
-        let carismaModificador = (carisma - 10) / 2;
-    </script>
-    <script id="scriptHabilidades">
-        // Função para calcular as habilidades
-        let forcaSalvaguarda = document.getElementById("input_forcaSalvaguarda").value;
-        let destrezaSalvaguarda = document.getElementById("input_destrezaSalvaguarda").value;
-        let constituicaoSalvaguarda = document.getElementById("input_constituicaoSalvaguarda").value;
-        let inteligenciaSalvaguarda = document.getElementById("input_inteligenciaSalvaguarda").value;
-        let sabedoriaSalvaguarda = document.getElementById("input_sabedoriaSalvaguarda").value;
-        let carismaSalvaguarda = document.getElementById("input_carismaSalvaguarda").value;
-        let ataqueCorpoACorpo = document.getElementById("input_ataqueCorpoACorpo").value;
-        let ataqueADistancia = document.getElementById("input_ataqueADistancia").value;
-        let outrosAtaques = document.getElementById("input_outrosAtaques").value;
-        let outrosEfeitos = document.getElementById("input_outrosEfeitos").value;
-        let outrosAcoes = document.getElementById("input_outrosAcoes").value;
-        let outrosReacoes = document.getElementById("input_outrosReacoes").value;
-        let armadura = document.getElementById("input_armadura").value;
-        let armaPrimaria = document.getElementById("input_armaPrimaria").value;
-        let armaSecundaria = document.getElementById("input_armaSecundaria").value;
-        let itensMagicos = document.getElementById("input_itensMagicos").value;
-        let outrosItens = document.getElementById("input_outrosItens").value;
-        let dinheiro = document.getElementById("input_dinheiro").value;
-        let moedaOuro = document.getElementById("input_moedaOuro").value;
-        let moedaPrata = document.getElementById("input_moedaPrata").value;
-        let moedaCobre = document.getElementById("input_moedaCobre").value;
-        let idiomas = document.getElementById("input_idiomas").value;
-        let historiaPersonagem = document.getElementById("input_historiaPersonagem").value;
-        let motivacao = document.getElementById("input_motivacao").value;
-        let ideais = document.getElementById("input_ideais").value;
-        let vinculos = document.getElementById("input_vinculos").value;
-        let defeitos = document.getElementById("input_defeitos").value;
-        let notas = document.getElementById("input_notas").value;
-        let inspiracao = document.getElementById("input_inspiracao").value;
-        let proficienciasArmadura = document.getElementById("input_proficiênciasArmadura").value;
-        let proficienciasArma = document.getElementById("input_proficiênciasArma").value;
-        let ferramentas = document.getElementById("input_ferramentas").value;
-        let idiomasProficiências = document.getElementById("input_idiomasProficiências").value;
-        let outrosProficiências = document.getElementById("input_outrosProficiências").value;
-        let acrobacia = document.getElementById("input_acrobacia").value;
-        let arcanismo = document.getElementById("input_arcanismo").value;
-        let atletismo = document.getElementById("input_atletismo").value;
-        let atuacao = document.getElementById("input_atuacao").value;
-        let enganação = document.getElementById("input_enganação").value;
-        let furtividade = document.getElementById("input_furtividade").value;
-        let historia = document.getElementById("input_historia").value;
-        let intimidação = document.getElementById("input_intimidação").value;
-        let intuicao = document.getElementById("input_intuicao").value;
-        let investigacao = document.getElementById("input_investigacao").value;
-        let medicina = document.getElementById("input_medicina").value;
-        let natureza = document.getElementById("input_natureza").value;
-        let percepcao = document.getElementById("input_percepcao").value;
-        let persuasao = document.getElementById("input_persuasao").value;
-        let religiao = document.getElementById("input_religiao").value;
-        let sobrevivencia = document.getElementById("input_sobrevivencia").value;
-        let furtividade = document.getElementById("input_furtividade").value;
-        let percepcaoPassiva = document.getElementById("input_percepcaoPassiva").value;
-    </script>
-    <script id="scriptSalvaguarda">
-        // Função para calcular as salvaguardas
-        let forcaSalvaguarda = document.getElementById("input_forcaSalvaguarda").value;
-        let destrezaSalvaguarda = document.getElementById("input_destrezaSalvaguarda").value;
-        let constituicaoSalvaguarda = document.getElementById("input_constituicaoSalvaguarda").value;
-        let inteligenciaSalvaguarda = document.getElementById("input_inteligenciaSalvaguarda").value;
-        let sabedoriaSalvaguarda = document.getElementById("input_sabedoriaSalvaguarda").value;
-        let carismaSalvaguarda = document.getElementById("input_carismaSalvaguarda").value;
-    </script>
-    <script id="scriptAtaques">
-        // Função para calcular os ataques
-        let ataqueCorpoACorpo = document.getElementById("input_ataqueCorpoACorpo").value;
-        let ataqueADistancia = document.getElementById("input_ataqueADistancia").value;
-        let outrosAtaques = document.getElementById("input_outrosAtaques").value;
-        let outrosEfeitos = document.getElementById("input_outrosEfeitos").value;
-        let outrosAcoes = document.getElementById("input_outrosAcoes").value;
-        let outrosReacoes = document.getElementById("input_outrosReacoes").value;
-        let armadura = document.getElementById("input_armadura").value;
-        let armaPrimaria = document.getElementById("input_armaPrimaria").value;
-        let armaSecundaria = document.getElementById("input_armaSecundaria").value;
-    </script>
-    <script id="scriptEquipamentos">
-        // Função para calcular os equipamentos    
-        let itensMagicos = document.getElementById("input_itensMagicos").value;
-        let outrosItens = document.getElementById("input_outrosItens").value;
-        let dinheiro = document.getElementById("input_dinheiro").value;
-        let moedaOuro = document.getElementById("input_moedaOuro").value;
-        let moedaPrata = document.getElementById("input_moedaPrata").value;
-        let moedaCobre = document.getElementById("input_moedaCobre").value;
-    </script>
-    <script id="scriptIdiomas">
-        // Função para calcular os idiomas    
-        let idiomas = document.getElementById("input_idiomas").value;
-    </script>
-    <script id="scriptProeficiencas">
-        // Função para calcular as proficiências
-        let proficienciasArmadura = document.getElementById("input_proficiênciasArmadura").value;
-        let proficienciasArma = document.getElementById("input_proficiênciasArma").value;
-        let ferramentas = document.getElementById("input_ferramentas").value;
-        let idiomasProficiências = document.getElementById("input_idiomasProficiências").value;
-        let outrosProficiências = document.getElementById("input_outrosProficiências").value;    
-    </script>
-
-    <div id="informacoesBasicas">
-        <h1>Ficha Dungeons & Dragons</h1>
-        <h2>Informações Básicas</h2>
-        <p>Nome do Personagem <input type="text" id="input_nomePersonagem" placeholder="Digite o nome aqui..."> </p>
-        <p>Raça <input type="text" id="input_raça" placeholder="Digite a raça aqui..."> </p>
-        <p>Classe <input type="text" id="input_classe" placeholder="Digite a classe aqui..."> </p>
-        <p>Subclasse <input type="text" id="input_subclasse" placeholder="Digite a subclasse aqui..."> </p>
-        <p>Background <input type="text" id="input_background" placeholder="Digite o background aqui..."> </p>
-        <p>Alinhamento <input type="text" id="input_alinhamento" placeholder="Digite o alinhamento aqui..."> </p>
-        <p>Idade <input type="text" id="input_idade" placeholder="Digite a idade aqui..."> </p>
-        <p>Altura <input type="text" id="input_altura" placeholder="Digite a altura aqui..."> </p>
-        <p>Peso <input type="text" id="input_peso" placeholder="Digite o peso aqui..."> </p>
-        <p>Sexo <input type="text" id="input_sexo" placeholder="Digite o sexo aqui..."> </p>
-        <p>Nome do Jogador <input type="text" id="input_nomeJogador" placeholder="Digite o nome do jogador aqui..."> </p>
-        <p>Experiência <input type="text" id="input_experiencia" placeholder="Digite a experiência aqui..."> </p>
-        <p>Nível <input type="text" id="input_nivel" placeholder="Digite o nível aqui..."> </p>
-        <p>XP para o Próximo Nível <input type="text" id="input_xpProximoNivel" placeholder="Digite a XP para o próximo nível aqui..."> </p>
-        <p>XP Total <input type="text" id="input_xpTotal" placeholder="Digite a XP total aqui..."> </p>
-    </div>
-    <div id="atrubutosCombate">
-        <h2>Atributos de Combate</h2> 
-        <p>PV Máximo <input type="text" id="input_pvMaximo" placeholder="Digite o PV máximo aqui..."> </p>
-        <p>PV Atual <input type="text" id="input_pvAtual" placeholder="Digite o PV atual aqui..."> </p>
-        <p>PV Temporário <input type="text" id="input_pvTemporario" placeholder="Digite o PV temporário aqui..."> </p>
-        <p>CA <input type="text" id="input_ca" placeholder="Digite a CA aqui..."> </p>
-        <p>Iniciativa <input type="text" id="input_iniciativa" placeholder="Digite a iniciativa aqui..."> </p>
-        <p>Deslocamento <input type="text" id="input_deslocamento" placeholder="Digite o deslocamento aqui..."> </p>
-        <p>Bonus de Proficiência <input type="text" id="input_proficiencia" placeholder="Digite a proficiência aqui..."> </p>
-        <p>Perícias <input type="text" id="input_pericias" placeholder="Digite as perícias aqui..."> </p>
-        <p>Testes de Resistência <input type="text" id="input_testesResistencia" placeholder="Digite os testes de resistência aqui..."> </p> 
-    </div>
-    <div id = "atributos">
-        <h2>Atributos</h2>
-        <p>Força <input type="text" id="input_forca" placeholder="Digite a força aqui..."> </p>
-        <p>Modificador de Força: </p>
-        <p>Destreza <input type="text" id="input_destreza" placeholder="Digite a destreza aqui..."> </p>
-        <p>Modificador de Destreza: </p>
-        <p>Constituição <input type="text" id="input_constituicao" placeholder="Digite a constituição aqui..."> </p>
-        <p>Modificador de Constituição: </p>
-        <p>Inteligência <input type="text" id="input_inteligencia" placeholder="Digite a inteligência aqui..."> </p>
-        <p>Modificador de Inteligência: </p>
-        <p>Sabedoria <input type="text" id="input_sabedoria" placeholder="Digite a sabedoria aqui..."> </p>
-        <p>Modificador de Sabedoria: </p>
-        <p>Carisma <input type="text" id="input_carisma" placeholder="Digite o carisma aqui..."> </p>
-        <p>Modificador de Carisma: </p>
-        
-    </div>
-    <div id="habilidades">
-        <h2>Habilidades</h2>
-        <p>Acrobacia </p>
-        <p>Arcanismo </p>
-        <p>Atletismo </p>
-        <p>Atuação </p>
-        <p>Enganação </p>
-        <p>Furtividade </p>
-        <p>História </p>
-        <p>Intimidação </p>
-        <p>Intuição </p>
-        <p>Investigação </p>
-        <p>Medicina </p>
-        <p>Natureza </p>
-        <p>Percepção </p>
-        <p>Persuasão </p>
-        <p>Religião </p>
-        <p>Sobrevivência </p>
-        <p>Furtividade </p>
-        <p>Percepção Passiva </p>
-    </div>
-    <div id = "salvaguarda">
-        <h2>Salvaguardas</h2>
-        <p>Força <input type="text" id="input_forcaSalvaguarda" placeholder="Digite a força aqui..."> </p>
-        <p>Destreza <input type="text" id="input_destrezaSalvaguarda" placeholder="Digite a destreza aqui..."> </p>
-        <p>Constituição <input type="text" id="input_constituicaoSalvaguarda" placeholder="Digite a constituição aqui..."> </p>
-        <p>Inteligência <input type="text" id="input_inteligenciaSalvaguarda" placeholder="Digite a inteligência aqui..."> </p>
-        <p>Sabedoria <input type="text" id="input_sabedoriaSalvaguarda" placeholder="Digite a sabedoria aqui..."> </p>
-        <p>Carisma <input type="text" id="input_carismaSalvaguarda" placeholder="Digite o carisma aqui..."> </p>
-    </div>
-    <div id = "ataques">
-        <h2>Ataques</h2>
-        <p>Ataque Corpo a Corpo <input type="text" id="input_ataqueCorpoACorpo" placeholder="Digite o ataque corpo a corpo aqui..."> </p>
-        <p>Ataque à Distância <input type="text" id="input_ataqueADistancia" placeholder="Digite o ataque à distância aqui..."> </p>
-        <p>Outros Ataques <input type="text" id="input_outrosAtaques" placeholder="Digite outros ataques aqui..."> </p>
-        <p>Outros Efeitos <input type="text" id="input_outrosEfeitos" placeholder="Digite outros efeitos aqui..."> </p>
-        <p>Outras Ações <input type="text" id="input_outrosAcoes" placeholder="Digite outras ações aqui..."> </p>
-        <p>Outras Reações <input type="text" id="input_outrosReacoes" placeholder="Digite outras reações aqui..."> </p>
+   <div class="conteiner">
+    <h1>Ficha Dungeons & Dragons</h1>    
+        <div class="column" id="informacoesBasicas">
+            <h2>Informações Básicas</h2>
+            <p>Nome do Personagem <input type="text" id="input_nomePersonagem" placeholder="Digite o nome aqui..." onchange="save()"> </p>
+            <p>Raça <input type="text" id="input_raça" placeholder="Digite a raça aqui..."> </p>
+            <p>Classe <input type="text" id="input_classe" placeholder="Digite a classe aqui..."> </p>
+            <p>Alinhamento <input type="text" id="input_alinhamento" placeholder="Digite o alinhamento aqui..."> </p> 
+            <p>Nome do Jogador <input type="text" id="input_nomeJogador" placeholder="Digite o nome do jogador aqui..."> </p>
+            <p>Experiência <input type="text" id="input_experiencia" placeholder="Digite a experiência aqui..."> </p>
+            <p>Nível <input type="text" id="input_nivel" placeholder="Digite o nível aqui..."> </p>
+            <p>XP para o Próximo Nível <input type="text" id="input_xpProximoNivel" placeholder="Digite a XP para o próximo nível aqui..."> </p>
+            <p>XP Total <input type="text" id="input_xpTotal" placeholder="Digite a XP total aqui..."> </p>
         </div>
-    <div id="equipamentos">
-        <h2>Equipamentos</h2>
-        <p>Armadura <input type="text" id="input_armadura" placeholder="Digite a armadura aqui..."> </p>
-        <p>Arma Primária <input type="text" id="input_armaPrimaria" placeholder="Digite a arma primária aqui..."> </p>
-        <p>Arma Secundária <input type="text" id="input_armaSecundaria" placeholder="Digite a arma secundária aqui..."> </p>
-        <p>Itens Mágicos <input type="text" id="input_itensMagicos" placeholder="Digite os itens mágicos aqui..."> </p>
-        <p>Outros Itens <input type="text" id="input_outrosItens" placeholder="Digite outros itens aqui..."> </p>   
-        <p>Dinheiro <input type="text" id="input_dinheiro" placeholder="Digite o dinheiro aqui..."> </p>
-        <p>Moeda de Ouro <input type="text" id="input_moedaOuro" placeholder="Digite a moeda de ouro aqui..."> </p> 
-        <p>Moeda de Prata <input type="text" id="input_moedaPrata" placeholder="Digite a moeda de prata aqui..."> </p>
-        <p>Moeda de Cobre <input type="text" id="input_moedaCobre" placeholder="Digite a moeda de cobre aqui..."> </p>
+        <div class="column" id="atrubutosCombate">
+            <h2>Atributos de Combate</h2> 
+            <p>PV Máximo <input type="text" id="input_pvMaximo" placeholder="Digite o PV máximo aqui..."> </p>
+            <p>PV Atual <input type="text" id="input_pvAtual" placeholder="Digite o PV atual aqui..."> </p>
+            <p>PV Temporário <input type="text" id="input_pvTemporario" placeholder="Digite o PV temporário aqui..."> </p>
+            <p>CA <input type="text" id="input_ca" placeholder="Digite a CA aqui..."> </p>
+            <p>Iniciativa <input type="text" id="input_iniciativa" placeholder="Digite a iniciativa aqui..."> </p>
+            <p>Deslocamento <input type="text" id="input_deslocamento" placeholder="Digite o deslocamento aqui..."> </p>
+            <p>Bonus de Proficiência <input type="text" id="input_proficiencia" placeholder="Digite a proficiência aqui..."> </p>
+            <p>Perícias <input type="text" id="input_pericias" placeholder="Digite as perícias aqui..."> </p>
+            <p>Testes de Resistência <input type="text" id="input_testesResistencia" placeholder="Digite os testes de resistência aqui..."> </p> 
+        </div>
+        <button class="button" id="" onclick="alert('Ficha salva com sucesso!')">Salvar Ficha</button>
     </div>
-    <div id="idiomas">
-        <h2>Idiomas</h2>
-        <p>Idiomas <input type="text" id="input_idiomas" placeholder="Digite os idiomas aqui..."> </p>
+    
+    <div class="conteiner">      
+        <div class="column" id = "atributos">
+            <h2>Atributos</h2>
+            <p>Força <input type="text" id="input_forca" placeholder="Digite a força aqui..."> </p>
+            <p>Modificador de Força: </p>
+            <p>Destreza <input type="text" id="input_destreza" placeholder="Digite a destreza aqui..."> </p>
+            <p>Modificador de Destreza: </p>
+            <p>Constituição <input type="text" id="input_constituicao" placeholder="Digite a constituição aqui..."> </p>
+            <p>Modificador de Constituição: </p>
+            <p>Inteligência <input type="text" id="input_inteligencia" placeholder="Digite a inteligência aqui..."> </p>
+            <p>Modificador de Inteligência: </p>
+            <p>Sabedoria <input type="text" id="input_sabedoria" placeholder="Digite a sabedoria aqui..."> </p>
+            <p>Modificador de Sabedoria: </p>
+            <p>Carisma <input type="text" id="input_carisma" placeholder="Digite o carisma aqui..."> </p>
+            <p>Modificador de Carisma: </p>
+        </div>
+        <div class="column" id="atrubutosCombate">
+            <h2>Atributos de Combate</h2> 
+            <p>PV Máximo <input type="text" id="input_pvMaximo" placeholder="Digite o PV máximo aqui..."> </p>
+            <p>PV Atual <input type="text" id="input_pvAtual" placeholder="Digite o PV atual aqui..."> </p>
+            <p>PV Temporário <input type="text" id="input_pvTemporario" placeholder="Digite o PV temporário aqui..."> </p>
+            <p>CA <input type="text" id="input_ca" placeholder="Digite a CA aqui..."> </p>
+            <p>Iniciativa <input type="text" id="input_iniciativa" placeholder="Digite a iniciativa aqui..."> </p>
+            <p>Deslocamento <input type="text" id="input_deslocamento" placeholder="Digite o deslocamento aqui..."> </p>
+            <p>Bonus de Proficiência <input type="text" id="input_proficiencia" placeholder="Digite a proficiência aqui..."> </p>
+            <p>Perícias <input type="text" id="input_pericias" placeholder="Digite as perícias aqui..."> </p>
+            <p>Testes de Resistência <input type="text" id="input_testesResistencia" placeholder="Digite os testes de resistência aqui..."> </p> 
+        </div>
+        <button class="button" id="" onclick="alert('Ficha salva com sucesso!')">Salvar Ficha</button>
     </div>
-    <div id="historia">
-        <h2>História</h2>
-        <p>História do Personagem <input type="text" id="input_historiaPersonagem" placeholder="Digite a história do personagem aqui..."> </p>
-        <p>Motivação <input type="text" id="input_motivacao" placeholder="Digite a motivação aqui..."> </p>
-        <p>Ideais <input type="text" id="input_ideais" placeholder="Digite os ideais aqui..."> </p>
-        <p>Vínculos <input type="text" id="input_vinculos" placeholder="Digite os vínculos aqui..."> </p>
-        <p>Defeitos <input type="text" id="input_defeitos" placeholder="Digite os defeitos aqui..."> </p>
-        <p>Notas <input type="text" id="input_notas" placeholder="Digite as notas aqui..."> </p>
-        <p>Inspiração <input type="text" id="input_inspiracao" placeholder="Digite a inspiração aqui..."> </p>
-    </div>
-    <div id = "proficiências">
-        <h2>Proficiências</h2>
-        <p>Proficiências de Armadura<input type="text" id="input_proficiênciasArmadura" placeholder="Digite as proficiências aqui..."> </p>
-        <p>Proficiências de Arma <input type="text" id="input_proficiênciasArma" placeholder="Digite as proficiências aqui..."> </p>
-        <p>Ferramentas <input type="text" id="input_ferramentas" placeholder="Digite as ferramentas aqui..."> </p>
-        <p>Idiomas <input type="text" id="input_idiomasProficiências" placeholder="Digite os idiomas aqui..."> </p>
-        <p>Outras Proficiências <input type="text" id="input_outrosProficiências" placeholder="Digite outras proficiências aqui..."> </p>
-    </div>
-    <button onclick="alert('Ficha salva com sucesso!')">Salvar Ficha</button>
-    <button onclick="abube()">Imprimir Ficha</button>
+    
+    <div class="conteiner">      
+        <div class="column" id="habilidades">
+            <h2>Habilidades</h2>
+            <p id="hab1">Acrobacia %trocar% </p>
+            <p>Arcanismo </p>
+            <p>Atletismo </p>
+            <p>Atuação </p>
+            <p>Enganação </p>
+            <p>Furtividade </p>
+            <p>História </p>
+            <p>Intimidação </p>
+            <p>Intuição </p>
+            <p>Investigação </p>
+            <p>Medicina </p>
+            <p>Natureza </p>
+            <p>Percepção </p>
+            <p>Persuasão </p>
+            <p>Religião </p>
+            <p>Sobrevivência </p>
+            <p>Furtividade </p>
+            <p>Percepção Passiva </p>
+        </div>
+        <div class="column" id="salvaguardas">
+            <h2>Salvaguardas</h2>
+            <p>Força <input type="text" id="input_forcaSalvaguarda" placeholder="Digite a força aqui..."> </p>
+            <p>Destreza <input type="text" id="input_destrezaSalvaguarda" placeholder="Digite a destreza aqui..."> </p>
+            <p>Constituição <input type="text" id="input_constituicaoSalvaguarda" placeholder="Digite a constituição aqui..."> </p>
+            <p>Inteligência <input type="text" id="input_inteligenciaSalvaguarda" placeholder="Digite a inteligência aqui..."> </p>
+            <p>Sabedoria <input type="text" id="input_sabedoriaSalvaguarda" placeholder="Digite a sabedoria aqui..."> </p>
+            <p>Carisma <input type="text" id="input_carismaSalvaguarda" placeholder="Digite o carisma aqui..."> </p>
+        </div>
+        <button class="button" id="" onclick="alert('Ficha salva com sucesso!')">Salvar Ficha</button>
+    </div>    
+
+    <div class="conteiner">      
+        <div class="column" id="ataques">
+            <h2>Ataques</h2>
+            <p>Ataque Corpo a Corpo <input type="text" id="input_ataqueCorpoACorpo" placeholder="Digite o ataque corpo a corpo aqui..."> </p>
+            <p>Ataque à Distância <input type="text" id="input_ataqueADistancia" placeholder="Digite o ataque à distância aqui..."> </p>
+            <p>Outros Ataques <input type="text" id="input_outrosAtaques" placeholder="Digite outros ataques aqui..."> </p>
+            <p>Outros Efeitos <input type="text" id="input_outrosEfeitos" placeholder="Digite outros efeitos aqui..."> </p>
+            <p>Outras Ações <input type="text" id="input_outrosAcoes" placeholder="Digite outras ações aqui..."> </p>
+            <p>Outras Reações <input type="text" id="input_outrosReacoes" placeholder="Digite outras reações aqui..."> </p>
+        </div>
+        <div class="column" id="equipamentos">
+            <h2>Equipamentos</h2>
+            <p>Armadura <input type="text" id="input_armadura" placeholder="Digite a armadura aqui..."> </p>
+            <p>Arma Primária <input type="text" id="input_armaPrimaria" placeholder="Digite a arma primária aqui..."> </p>
+            <p>Arma Secundária <input type="text" id="input_armaSecundaria" placeholder="Digite a arma secundária aqui..."> </p>
+            <p>Itens Mágicos <input type="text" id="input_itensMagicos" placeholder="Digite os itens mágicos aqui..."> </p>
+            <p>Outros Itens <input type="text" id="input_outrosItens" placeholder="Digite outros itens aqui..."> </p>   
+            <p>Dinheiro <input type="text" id="input_dinheiro" placeholder="Digite o dinheiro aqui..."> </p>
+            <p>Moeda de Ouro <input type="text" id="input_moedaOuro" placeholder="Digite a moeda de ouro aqui..."> </p> 
+            <p>Moeda de Prata <input type="text" id="input_moedaPrata" placeholder="Digite a moeda de prata aqui..."> </p>
+            <p>Moeda de Cobre <input type="text" id="input_moedaCobre" placeholder="Digite a moeda de cobre aqui..."> </p>
+        </div>
+        <button class="button" id="" onclick="alert('Ficha salva com sucesso!')">Salvar Ficha</button>
+    </div> 
+    
+    <div class="conteiner">      
+        <div class="column" id="historia">
+            <h2>História</h2>
+            <p>História do Personagem <input type="text" id="input_historiaPersonagem" placeholder="Digite a história do personagem aqui..."> </p>
+            <p>Motivação <input type="text" id="input_motivacao" placeholder="Digite a motivação aqui..."> </p>
+            <p>Ideais <input type="text" id="input_ideais" placeholder="Digite os ideais aqui..."> </p>
+            <p>Vínculos <input type="text" id="input_vinculos" placeholder="Digite os vínculos aqui..."> </p>
+            <p>Defeitos <input type="text" id="input_defeitos" placeholder="Digite os defeitos aqui..."> </p>
+            <p>Notas <input type="text" id="input_notas" placeholder="Digite as notas aqui..."> </p>
+            <p>Inspiração <input type="text" id="input_inspiracao" placeholder="Digite a inspiração aqui..."> </p>
+        </div>
+        <div class="column" id="proficiências">
+            <h2>Proficiências</h2>
+            <p>Proficiências de Armadura<input type="text" id="input_proficiênciasArmadura" placeholder="Digite as proficiências aqui..."> </p>
+            <p>Proficiências de Arma <input type="text" id="input_proficiênciasArma" placeholder="Digite as proficiências aqui..."> </p>
+            <p>Ferramentas <input type="text" id="input_ferramentas" placeholder="Digite as ferramentas aqui..."> </p>
+            <p>Idiomas <input type="text" id="input_idiomasProficiências" placeholder="Digite os idiomas aqui..."> </p>
+            <p>Outras Proficiências <input type="text" id="input_outrosProficiências" placeholder="Digite outras proficiências aqui..."> </p>
+        </div>
+        <button class="button" id="" onclick="alert('Ficha salva com sucesso!')">Salvar Ficha</button>
+    </div> 
+<script id="salvar">
+    function save() {
+        let id = document.getElementById('input_nomePersonagem').id.value; // Obter o ID do elemento
+        let nome = document.getElementById('input_nomePersonagem');                
+            if(nome.value !== ""){
+                alert(`Xerequinha salva!`);
+                nome.value = ""; // Limpar o campo após salvar
+            } else{
+                alert("Xerequinha não salva!");
+            }
+        }
+</script>
 </body>
 </html>

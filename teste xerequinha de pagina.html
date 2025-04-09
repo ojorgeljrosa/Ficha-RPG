@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ficha Dungeons & Dragons</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        h1, h2 {
+            color: #333;
+        }
+        p {
+            margin: 10px 0;
+        }
+        input[type="text"] {
+            width: 300px;
+            padding: 8px;
+            margin-left: 10px;
+        }
+    </style>    
+</head>
+<body>
+    <input type="number" id="nome" placeholder="Nome do Personagem"> 
+    <button onclick="xerequinha()">Salvar Ficha</button>
+    <div id="salvo"></div>
+    
+    <script id="salvar">
+        
+        // Função para enviar os dados para o webhook
+        function xerequinha() {
+            var nome = document.getElementById('nome').value;
+            var number = parseInt(nome, 10);
+            var salvo = document.getElementById('salvo');
+            if(nome !== ""){
+                salvo.innerHTML = "Xerequinha salva!";
+            alert("Xerequinha salva!");
+            }
+            else{
+            alert("Xerequinha não salva!");
+            }
+        }
+
+    </script>
+    <script src="config.js"></script>
+
+
+</body>
+</html>
