@@ -1,0 +1,207 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+        }
+        h1, h2 {
+            color: #333;
+        }
+        p {
+            margin: 10px 0;
+        }
+        /* Inicio Estilo dos Inputs */
+        input{
+            background-color: #e4e4e4;
+            border-radius: 5px;
+            padding: 8px;
+            margin-left: 10px;
+            border: 1px solid #909091;
+        }
+        
+        .inputTextoLongo {
+            width: 300px;
+        }
+        .inputTextoMedio, #input_tipoDanoataque1, #input_tipoDanoataque2, #input_tipoDanoataque3 {
+            width: 150px;
+        }
+        .inputTextoCurto {
+            width: 100px;
+        }
+        input[type="number"] {
+            width: 75px;
+        }
+        .textarea {
+            padding: 10px;
+            margin-left: 10px;
+            border-radius: 5px;
+            display: inline-block;
+            cursor: pointer;
+            background-color: #e4e4e4;
+            border: 1px solid #909091;
+            vertical-align: middle;
+            height: 100px;
+            width: 300px;
+        }
+        .dropdown {
+            padding: 8px;
+            border-radius: 5px;
+            width: 300px;
+            cursor: pointer;
+            margin-left: 10px;
+            background-color: #e4e4e4;
+            border: 1px solid #909091;
+        }
+
+        /* Efeito de Hover */
+        .dropdown:hover {
+            border-color: #7c7144; 
+        }
+        /* Estilo do Menu Aberto */
+        .dropdown:focus {
+            outline: none;
+            border-color: #7c7144; 
+        }
+        .dropdown option:hover {
+            background-color: #fff;
+            color: #333;
+        }
+
+        .checkbox {
+            width: 15px;
+            height: 15px;
+            margin-left: 10px;
+            cursor: pointer;
+            vertical-align: middle;
+            border-radius: 5px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            display: block;
+            margin-left: auto;
+            margin-right: 20px;
+        }
+        /* Fim Estilo dos Inputs */
+
+        /* Inicio Estilo do Preenchimento Automático */
+        .autoIncrement { 
+            padding: 10px;
+            margin-left: 10px;
+            border-radius: 5px;
+            text-align: center;
+            display: inline-block;
+            cursor: pointer;
+            background-color: #cacaca;
+            border: 1px solid #909091; 
+        }
+        /* Fim Estilo do Preenchimento Automático */
+
+        /* Inicio Estilo dos Conteiners e Colunas */
+
+        .conteiner {
+            margin-bottom: 20px;
+            padding-bottom: 30px;
+            padding-top: 30px;
+            padding-left: 30px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .column {
+            margin-bottom: 20px;
+            padding-bottom: 30px;
+            padding-top: 20px;
+            padding-left: 30px;
+            padding-right: 20px;
+            background-color: #d4d4d4;
+            border-radius: 10px;
+            width: 45%;
+            flex-direction: column;
+            align-items: right;
+            justify-content: center;
+            display: inline-block;
+            vertical-align: top;
+            height: 550px;
+        }
+        #habilidades {
+            margin-bottom: 20px;
+            padding-bottom: 30px;
+            padding-top: 20px;
+            padding-left: 30px;
+            padding-right: 20px;
+            background-color: #d4d4d4;
+            border-radius: 10px;
+            width: 45%;
+            flex-direction: column;
+            align-items: right;
+            justify-content: center;
+            display: inline-block;
+            vertical-align: top;
+            height: 1000px;
+        }
+        #historia {
+            margin-bottom: 20px;
+            padding-bottom: 30px;
+            padding-top: 20px;
+            padding-left: 30px;
+            padding-right: 20px;
+            background-color: #d4d4d4;
+            border-radius: 10px;
+            width: 45%;
+            flex-direction: column;
+            align-items: right;
+            justify-content: center;
+            display: inline-block;
+            vertical-align: top;
+            height: 1000px;
+        }
+        #ataques, #equipamentos{
+            margin-bottom: 20px;
+            padding-bottom: 30px;
+            padding-top: 20px;
+            padding-left: 30px;
+            padding-right: 20px;
+            background-color: #d4d4d4;
+            border-radius: 10px;
+            width: 45%;
+            flex-direction: column;
+            align-items: right;
+            justify-content: center;
+            display: inline-block;
+            vertical-align: top;
+            height: auto;
+        }
+        /* Fim Estilo dos Conteiners e Colunas */
+
+        /* Inicio Estilo das SubColunas */
+        #armas{
+            margin-bottom: 20px;
+            background-color: #d4d4d4;
+            border-radius: 10px;
+            align-items: right;
+            justify-content: center;
+        }
+        .ataque{
+            margin-bottom: 20px;
+            padding-bottom: 30px;
+            padding-top: 20px;
+            padding-left: 30px;
+            padding-right: 20px;
+            background-color: #d4d4d4;
+            border-radius: 10px;
+            border: 1px solid #909091;
+            width: 45%;
+            flex-direction: column;
+            align-items: right;
+            justify-content: center;
+            display: inline-block;
+            vertical-align: top;
+            height: auto;
+        }
+        /* Fim Estilo das SubColunas */

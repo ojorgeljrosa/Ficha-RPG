@@ -1,0 +1,200 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #121212; /* Fundo escuro */
+    color: #e0e0e0; /* Texto claro */
+    margin: 0;
+    padding: 20px;
+}
+h1, h2 {
+    color: #ffffff; /* Títulos brancos */
+}
+p {
+    margin: 10px 0;
+    color: #e0e0e0; /* Parágrafos claros */
+}
+
+/* Início Estilo dos Inputs */
+input {
+    background-color: #333333; /* Fundo escuro para inputs */
+    border-radius: 5px;
+    padding: 8px;
+    margin-left: 10px;
+    border: 1px solid #444444; /* Borda clara para contraste */
+    color: #ffffff; /* Texto claro dentro dos inputs */
+}
+.inputTextoLongo {
+    width: 300px;
+}
+.inputTextoMedio,
+#input_tipoDanoataque1,
+#input_tipoDanoataque2,
+#input_tipoDanoataque3 {
+    width: 150px;
+}
+.inputTextoCurto {
+    width: 100px;
+}
+input[type="number"] {
+    width: 75px;
+}
+.textarea {
+    padding: 10px;
+    margin-left: 10px;
+    border-radius: 5px;
+    display: inline-block;
+    cursor: pointer;
+    background-color: #333333; /* Fundo escuro para textarea */
+    border: 1px solid #444444; /* Borda clara para contraste */
+    color: #ffffff; /* Texto claro dentro do textarea */
+    vertical-align: middle;
+    height: 100px;
+    width: 300px;
+}
+.dropdown {
+    padding: 8px;
+    border-radius: 5px;
+    width: 300px;
+    cursor: pointer;
+    margin-left: 10px;
+    background-color: #333333; /* Fundo escuro para dropdown */
+    border: 1px solid #444444; /* Borda clara para contraste */
+    color: #ffffff; /* Texto claro dentro do dropdown */
+}
+/* Efeito de Hover */
+.dropdown:hover {
+    border-color: #7c7144; /* Mantém o mesmo hover */
+}
+/* Estilo do Menu Aberto */
+.dropdown:focus {
+    outline: none;
+    border-color: #7c7144; /* Mantém o mesmo focus */
+}
+.dropdown option:hover {
+    background-color: #444444; /* Fundo escuro para opções */
+    color: #ffffff; /* Texto claro nas opções */
+}
+.checkbox {
+    width: 15px;
+    height: 15px;
+    margin-left: 10px;
+    cursor: pointer;
+    vertical-align: middle;
+    border-radius: 5px;
+    background-color: #333333; /* Fundo escuro para checkbox */
+    border: 1px solid #444444; /* Borda clara para contraste */
+}
+button {
+    padding: 10px 20px;
+    background-color: #0056b3; /* Azul escuro para botão */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: block;
+    margin-left: auto;
+    margin-right: 20px;
+}
+/* Fim Estilo dos Inputs */
+
+/* Início Estilo do Preenchimento Automático */
+.autoIncrement {
+    padding: 10px;
+    margin-left: 10px;
+    border-radius: 5px;
+    text-align: center;
+    display: inline-block;
+    cursor: pointer;
+    background-color: #444444; /* Fundo escuro para preenchimento automático */
+    border: 1px solid #555555; /* Borda clara para contraste */
+    color: #ffffff; /* Texto claro */
+}
+/* Fim Estilo do Preenchimento Automático */
+
+/* Início Estilo dos Conteineres e Colunas */
+.conteiner {
+    margin-bottom: 20px;
+    padding-bottom: 30px;
+    padding-top: 30px;
+    padding-left: 30px;
+    background-color: #1e1e1e; /* Fundo escuro para containers */
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Sombra mais escura */
+}
+.column {
+    margin-bottom: 20px;
+    padding-bottom: 30px;
+    padding-top: 20px;
+    padding-left: 30px;
+    padding-right: 20px;
+    background-color: #2a2a2a; /* Fundo escuro para colunas */
+    border-radius: 10px;
+    width: 45%;
+    flex-direction: column;
+    align-items: right;
+    justify-content: center;
+    display: inline-block;
+    vertical-align: top;
+    height: 550px;
+}
+#habilidades,
+#historia {
+    margin-bottom: 20px;
+    padding-bottom: 30px;
+    padding-top: 20px;
+    padding-left: 30px;
+    padding-right: 20px;
+    background-color: #2a2a2a; /* Fundo escuro para habilidades/história */
+    border-radius: 10px;
+    width: 45%;
+    flex-direction: column;
+    align-items: right;
+    justify-content: center;
+    display: inline-block;
+    vertical-align: top;
+    height: 1000px;
+}
+#ataques,
+#equipamentos {
+    margin-bottom: 20px;
+    padding-bottom: 30px;
+    padding-top: 20px;
+    padding-left: 30px;
+    padding-right: 20px;
+    background-color: #2a2a2a; /* Fundo escuro para ataques/equipamentos */
+    border-radius: 10px;
+    width: 45%;
+    flex-direction: column;
+    align-items: right;
+    justify-content: center;
+    display: inline-block;
+    vertical-align: top;
+    height: auto;
+}
+/* Fim Estilo dos Conteineres e Colunas */
+
+/* Início Estilo das SubColunas */
+#armas {
+    margin-bottom: 20px;
+    background-color: #2a2a2a; /* Fundo escuro para armas */
+    border-radius: 10px;
+    align-items: right;
+    justify-content: center;
+}
+.ataque {
+    margin-bottom: 20px;
+    padding-bottom: 30px;
+    padding-top: 20px;
+    padding-left: 30px;
+    padding-right: 20px;
+    background-color: #2a2a2a; /* Fundo escuro para ataques */
+    border-radius: 10px;
+    border: 1px solid #444444; /* Borda clara para contraste */
+    width: 45%;
+    flex-direction: column;
+    align-items: right;
+    justify-content: center;
+    display: inline-block;
+    vertical-align: top;
+    height: auto;
+}
+/* Fim Estilo das SubColunas */

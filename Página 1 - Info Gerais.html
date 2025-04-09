@@ -4,246 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ficha Dungeons & Dragons</title>
-    <!-- <link rel="stylesheet" href="style.css"> -->
-     <style>
-        body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    margin: 0;
-    padding: 20px;
-}
-h1, h2 {
-    color: #333;
-}
-p {
-    margin: 10px 0;
-}
-input[type="text"] {
-    width: 300px;
-    padding: 8px;
-    margin-left: 10px;
-    border-radius: 5px;
-    background-color: #dbdbdb;
-    border: 1px solid #909091;
-}
-input[type="number"] {
-    width: 100px;
-    padding: 8px;
-    margin-left: 10px;
-    border-radius: 5px;
-    background-color: #dbdbdb;
-    border: 1px solid #909091;
-}
-.conteiner {
-    margin-bottom: 20px;
-    padding-bottom: 30px;
-    padding-top: 30px;
-    padding-left: 30px;
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-button {
-    padding: 10px 20px;
-    background-color: #007BFF;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    display: block;
-    margin-left: auto;
-    margin-right: 20px;
-}
-.column {
-    margin-bottom: 20px;
-    padding-bottom: 30px;
-    padding-top: 20px;
-    padding-left: 30px;
-    padding-right: 20px;
-    background-color: #d4d4d4;
-    border-radius: 10px;
-    width: 45%;
-    flex-direction: column;
-    align-items: right;
-    justify-content: center;
-    display: inline-block;
-    vertical-align: top;
-    height: 550px;
-}
-#habilidades {
-    margin-bottom: 20px;
-    padding-bottom: 30px;
-    padding-top: 20px;
-    padding-left: 30px;
-    padding-right: 20px;
-    background-color: #d4d4d4;
-    border-radius: 10px;
-    width: 45%;
-    flex-direction: column;
-    align-items: right;
-    justify-content: center;
-    display: inline-block;
-    vertical-align: top;
-    height: 1000px;
-}
-#historia {
-    margin-bottom: 20px;
-    padding-bottom: 30px;
-    padding-top: 20px;
-    padding-left: 30px;
-    padding-right: 20px;
-    background-color: #d4d4d4;
-    border-radius: 10px;
-    width: 45%;
-    flex-direction: column;
-    align-items: right;
-    justify-content: center;
-    display: inline-block;
-    vertical-align: top;
-    height: 1000px;
-}
-/* Estilo do Dropdown */
-.dropdown {
-    padding: 8px;
-    border-radius: 5px;
-    width: 300px;
-    cursor: pointer;
-    margin-left: 10px;
-    background-color: #dbdbdb;
-    border: 1px solid #909091;
-}
+    <link rel="stylesheet" id="style" href="style_ noturno.css">
 
-/* Efeito de Hover */
-.dropdown:hover {
-    border-color: #7c7144; /* Dourado */
-}
-/* Estilo do Menu Aberto */
-.dropdown:focus {
-    outline: none;
-    border-color: #7c7144; /* Dourado */
-}
-.dropdown option:hover {
-    background-color: #fff;
-    color: #333;
-}
-.modHab {
-    padding: 10px;
-    margin-left: 10px;
-    border-radius: 5px;
-    text-align: center;
-    display: inline-block;
-    cursor: pointer;
-    background-color: #cacaca;
-    border: 1px solid #909091; 
-}
-.autoIncrement { 
-    padding: 10px;
-    margin-left: 10px;
-    border-radius: 5px;
-    text-align: center;
-    display: inline-block;
-    cursor: pointer;
-    background-color: #cacaca;
-    border: 1px solid #909091; 
-}
-
-.textarea {
-    padding: 10px;
-    margin-left: 10px;
-    border-radius: 5px;
-    display: inline-block;
-    cursor: pointer;
-    background-color: #dbdbdb;
-    border: 1px solid #909091;
-    vertical-align: middle;
-    height: 100px;
-    width: 300px;
-}
-.nomeArma{
-    width: 300px;
-    padding: 8px;
-    margin-left: 100px;
-    border-radius: 5px;
-    background-color: #dbdbdb;
-    border: 1px solid #909091;
-}
-.danoArma{
-width: 100px;
-    padding: 8px;
-    margin-left: 10px;
-    border-radius: 5px;
-    background-color: #d17b7b;
-    border: 1px solid #909091;
-}
-.efeitoArma{
-
-}
-#armas{
-    margin-bottom: 20px;
-    padding-bottom: 30px;
-    padding-top: 20px;
-    padding-left: 30px;
-    padding-right: 20px;
-    background-color: #d4d4d4;
-    border-radius: 10px;
-    width: 30%;
-    flex-direction: column;
-    align-items: right;
-    justify-content: center;
-    display: inline-block;
-    vertical-align: top;
-    height: auto;
-
-}
-.ataque{
-    margin-bottom: 20px;
-    padding-bottom: 30px;
-    padding-top: 20px;
-    padding-left: 30px;
-    padding-right: 20px;
-    background-color: #d4d4d4;
-    border-radius: 10px;
-    border: 1px solid #909091;
-    width: 45%;
-    flex-direction: column;
-    align-items: right;
-    justify-content: center;
-    display: inline-block;
-    vertical-align: top;
-    height: auto;
-}
-#input_nomeAtaque1, #input_nomeAtaque2, #input_nomeAtaque3, #input_danoAtaque1, #input_danoAtaque2, #input_danoAtaque3, #input_tipoDanoataque1, #input_tipoDanoataque2, #input_tipoDanoataque3{
-    width: 150px;
-    padding: 8px;
-    margin-left: 10px;
-    border-radius: 5px;
-    background-color: #dbdbdb;
-    border: 1px solid #909091;
-}
-#ataques, #equipamentos{
-    margin-bottom: 20px;
-    padding-bottom: 30px;
-    padding-top: 20px;
-    padding-left: 30px;
-    padding-right: 20px;
-    background-color: #d4d4d4;
-    border-radius: 10px;
-    width: 45%;
-    flex-direction: column;
-    align-items: right;
-    justify-content: center;
-    display: inline-block;
-    vertical-align: top;
-    height: auto;
-}
-     </style>
 </head>
 <body>
-   <div class="conteiner">
+    <p>Modo Noturno<input type="checkbox" id="boxNoturno" class="checkbox" onchange="modoNoturno()"></p>
+    
+    <div class="conteiner">
+    
     <h1>Ficha Dungeons & Dragons</h1>    
         <div class="column" id="informacoesBasicas" onchange="saveInformacoesBasicas()">
             <h2>Informações Básicas</h2>
-            <p>Nome do Personagem <input type="text" id="input_nomePersonagem" placeholder="Digite o nome aqui..."> </p>
+            <p>Nome do Personagem <input type="text" class="inputTextoLongo" id="input_nomePersonagem" placeholder="Digite o nome aqui..."> </p>
             <p>Raça <select id="input_raca" name="raca" class="dropdown">
                 <option value="">Selecione uma raça</option>
                 <option value="humano">Humano</option>
@@ -285,8 +57,8 @@ width: 100px;
                 <option value="neutro-mau">Neutro e Mau</option>
                 <option value="caotico-mau">Caótico e Mau</option>
             </select> 
-            <p>Nome do Jogador <input type="text" id="input_nomeJogador" placeholder="Digite o nome do jogador aqui..."> </p>
-            <p>Experiência <input type="text" id="input_experiencia" placeholder="Digite a experiência aqui..." onchange="nivel()"> </p>
+            <p>Nome do Jogador <input type="text" class="inputTextoLongo" id="input_nomeJogador" placeholder="Digite o nome do jogador aqui..."> </p>
+            <p>Experiência <input type="number" id="input_experiencia" placeholder="Digite a experiência aqui..." onchange="nivel()"> </p>
             <p>Nível <text id="ai_nivel" class="autoIncrement">0</text></p>
             <p>XP para o Próximo Nível <text id="ai_xpProximoNivel" class="autoIncrement">0</text></p>
             <p>Inspiração <text class="autoIncrement" id="ai_inspiracao"> 0 </text></p>
@@ -324,7 +96,6 @@ width: 100px;
             <p>Deslocamento<text id="ai_deslocamento" class="autoIncrement">0</text></p>
             <p>Bonus de Proficiência<text id="ai_proeficiencia" class="autoIncrement">0</text></p>
             <p>Sabedoria Passiva<text id="ai_sabPassiva" class="autoIncrement">0</text></p>
-            <p>Testes de Resistência <input type="text" id="input_testesResistencia" placeholder="Digite os testes de resistência aqui..."> </p> 
         </div>
         <button class="button" id="" onclick="alert('Ficha salva com sucesso!')">Salvar Ficha</button>
     </div>
@@ -368,9 +139,9 @@ width: 100px;
             <h2>Ataques</h2>
             <div id="ataque1" class="ataque">
                 <p>Ataque 1</p>
-                <p><label for="input_nomeAtaque1">Nome:</label> <input type="text" id="input_nomeAtaque1" placeholder="Nome do ataque..."></p> 
-                <p><label for="input_danoAtaque1">Dano:</label> <input type="text" id="input_danoAtaque1" placeholder="Dano do ataque..."></p> 
-                <p> Tipo: <select class="dropdown" id="input_tipoDanoataque1" >
+                <p><label for="input_nomeAtaque1">Nome:</label> <input type="text" class="inputTextoMedio" id="input_nomeAtaque1" placeholder="Nome do ataque..."></p> 
+                <p><label for="input_danoAtaque1">Dano:</label> <input type="text" class="inputTextoMedio" id="input_danoAtaque1" placeholder="Dano do ataque..."></p> 
+                <p> Tipo: <select class="dropdown" class="inputTextoMedio" id="input_tipoDanoataque1" >
                     <option value="">Tipo de dano...</option>
                     <option value="acido">Ácido</option>
                     <option value="contundente">Contundente</option>
@@ -389,9 +160,9 @@ width: 100px;
             </div>
             <div id="ataque2" class="ataque">
                 <p>Ataque 2</p>
-                <p><label for="input_nomeAtaque2">Nome:</label> <input type="text" id="input_nomeAtaque2" placeholder="Nome do ataque..."></p> 
-                <p><label for="input_danoAtaque2">Dano:</label> <input type="text" id="input_danoAtaque2" placeholder="Dano do ataque..."></p> 
-                <p> Tipo: <select class="dropdown" id="input_tipoDanoataque2" >
+                <p><label for="input_nomeAtaque2">Nome:</label> <input type="text" id="input_nomeAtaque2" class="inputTextoMedio" placeholder="Nome do ataque..."></p> 
+                <p><label for="input_danoAtaque2">Dano:</label> <input type="text" id="input_danoAtaque2" class="inputTextoMedio" placeholder="Dano do ataque..."></p> 
+                <p> Tipo: <select class="dropdown" id="input_tipoDanoataque2" class="inputTextoMedio" >
                     <option value="">Tipo de dano...</option>
                     <option value="acido">Ácido</option>
                     <option value="contundente">Contundente</option>
@@ -410,9 +181,9 @@ width: 100px;
             </div>
             <div id="ataque3" class="ataque">
                 <p>Ataque 3</p>
-                <p><label for="input_nomeAtaque3">Nome:</label> <input type="text" id="input_nomeAtaque3" placeholder="Nome do ataque..."></p> 
-                <p><label for="input_danoAtaque3">Dano:</label> <input type="text" id="input_danoAtaque3" placeholder="Dano do ataque..."></p> 
-                <p> Tipo: <select class="dropdown" id="input_tipoDanoataque3" >
+                <p><label for="input_nomeAtaque3">Nome:</label> <input type="text" id="input_nomeAtaque3" class="inputTextoMedio" placeholder="Nome do ataque..."></p> 
+                <p><label for="input_danoAtaque3">Dano:</label> <input type="text" id="input_danoAtaque3" class="inputTextoMedio" placeholder="Dano do ataque..."></p> 
+                <p> Tipo: <select class="dropdown" id="input_tipoDanoataque3" class="inputTextoMedio" >
                     <option value="">Tipo de dano...</option>
                     <option value="acido">Ácido</option>
                     <option value="contundente">Contundente</option>
@@ -462,9 +233,9 @@ width: 100px;
             </select></p>
             <div id="armas">
                 <p>Arma Primária </p>
-                <input type="text" id="input_armaPrimaria" class="nomeArma" placeholder="Digite a arma primária aqui..."><input type="text" class="danoArma" id="danoArmaPrimaria" placeholder="Dano..."> <input type="text" class="efeitoArma" id="efeitoArmaPrimaria" placeholder="Efeito...">
+                <input type="text" id="input_armaPrimaria" class="inputTextoMedio" placeholder="Digite a arma primária aqui..."><input type="text" class="inputTextoMedio" id="danoArmaPrimaria" placeholder="Dano..."> <input type="text" class="inputTextoMedio" id="efeitoArmaPrimaria" placeholder="Efeito...">
                 <p>Arma Secundária</p>
-                <input type="text" class="nomeArma" id="input_armaSecundaria" placeholder="Digite a arma secundária aqui..."><input type="text" class="danoArma" id="danoArmaSecundaria" placeholder="Dano..."> <input type="text" class="efeitoArma" id="efeitoArmaSecundaria" placeholder="Efeito...">
+                <input type="text" class="inputTextoMedio" id="input_armaSecundaria" placeholder="Digite a arma secundária aqui..."><input type="text" class="inputTextoMedio" id="danoArmaSecundaria" placeholder="Dano..."> <input type="text" class="inputTextoMedio" id="efeitoArmaSecundaria" placeholder="Efeito...">
             </div>    
             <p>Itens Mágicos <textarea type="text" class="textarea" id="input_itensMagicos" placeholder="Digite os itens mágicos aqui..."></textarea> </p>
             <p>Outros Itens <textarea type="text" class="textarea" id="input_outrosItens" placeholder="Digite outros itens aqui..."></textarea> </p>
@@ -487,24 +258,37 @@ width: 100px;
         </div>
         <div class="column" id="proficiências" onchange="saveProficiências()">
             <h2>Proficiências</h2>
-            <p> <input type="checkbox" id="boxProeArmadura" class="checkbox">Armaduras<input type="text" id="input_proeArmadura" placeholder="Digite os tipos de armaduras aqui..."></p>
-            <p> <input type="checkbox" id="boxProeArma" class="checkbox">Armas<input type="text" id="input_proeArma" placeholder="Digite os tipos de armas aqui..."></p>
-            <p> <input type="checkbox" id="boxProeFerramenta" class="checkbox">Ferramentas<input type="text" id="input_proeFerramentas" placeholder="Digite os tipos de ferramentas aqui..."></p>
-            <p> <input type="checkbox" id="boxProeIdioma" class="checkbox" > Idiomas<input type="text" id="input_proeIdiomas" placeholder="Digite os idiomas aqui..."></p>
+            <p> <input type="checkbox" id="boxProeArmadura" class="checkbox">Armaduras<input type="text" id="input_proeArmadura" class="inputTextoLongo" placeholder="Digite os tipos de armaduras aqui..."></p>
+            <p> <input type="checkbox" id="boxProeArma" class="checkbox">Armas<input type="text" id="input_proeArma" class="inputTextoLongo" placeholder="Digite os tipos de armas aqui..."></p>
+            <p> <input type="checkbox" id="boxProeFerramenta" class="checkbox">Ferramentas<input type="text" id="input_proeFerramentas" class="inputTextoLongo" placeholder="Digite os tipos de ferramentas aqui..."></p>
+            <p> <input type="checkbox" id="boxProeIdioma" class="checkbox" > Idiomas<input type="text" class="inputTextoLongo" id="input_proeIdiomas" placeholder="Digite os idiomas aqui..."></p>
             <p>Outras Proficiências <textarea type="text" class="textarea" id="input_outrosProficiências" placeholder="Digite outras proficiências aqui..."></textarea> </p>
         </div>
         <button class="button" id="" onclick="alert('Ficha salva com sucesso!')">Salvar Ficha</button>
     </div> 
 <script id="salvar">
     function saveInformacoesBasicas() {
-        let id = document.getElementById('input_nomePersonagem').id.value; // Obter o ID do elemento
         let nomeValue = document.getElementById('input_nomePersonagem');
         let racaValue = document.getElementById('input_raca').value;
         let classeValue = document.getElementById('input_classe').value;
         let alinhamentoValue = document.getElementById('input_alinhamento').value;
         let jogadorValue = document.getElementById('input_nomeJogador').value;
         let experienciaValue = document.getElementById('input_experiencia').value;
+        let dadoVida = document.getElementById('ai_dadoVida').innerHTML;
+        
+
+        if (classeValue === "barbaro") {
+            dadoVida = "d12";
+        } else if (classeValue === "guerreiro" || classeValue === "paladino" || classeValue === "explorador") {
+            dadoVida = "d10";
+        } else if (classeValue === "clerigo" || classeValue === "ladino" || classeValue === "bruxo" || classeValue === "bardo" || classeValue === "druida" || classeValue === "monge" || classeValue === "artifice") {
+            dadoVida = "d8";
+        } else if (classeValue === "feiticeiro" || classeValue === "mago" || classeValue === "necromante") {
+            dadoVida = "d6";
         }
+        document.getElementById('ai_dadoVida').innerHTML = dadoVida;
+    }
+
     function nivel() {
         let nivel = 0;
         let xpProximoNivel = 0;
@@ -572,8 +356,8 @@ width: 100px;
             nivel = 0;
         }
         let xpFaltando = xpProximoNivel - numXpAtual;
-        document.getElementById('ai_nivel').innerHTML = "Nível: " + nivel;
-        document.getElementById('ai_xpProximoNivel').innerHTML = "XP para o Próximo Nível: " + xpFaltando;
+        document.getElementById('ai_nivel').innerHTML = nivel;
+        document.getElementById('ai_xpProximoNivel').innerHTML = xpFaltando;
         
         // Proeficiência
 
@@ -590,7 +374,7 @@ width: 100px;
         } else if (numNivel > 20) {
             proeficiencia = 7;
         }
-        document.getElementById('ai_proeficiencia').innerHTML = "Bônus de Proficiência: " + proeficiencia;
+        document.getElementById('ai_proeficiencia').innerHTML = proeficiencia;
     }
     function saveAtributos() {
         let forca = document.getElementById('input_forca').value;
@@ -611,14 +395,17 @@ width: 100px;
         let modInt = Math.floor((inteligencia - 10) / 2);
         let modSab = Math.floor((sabedoria - 10) / 2);
         let modCar = Math.floor((carisma - 10) / 2);
-        document.getElementById('ai_modFor').innerHTML = "Modificador de Força: " + modFor;
-        document.getElementById('ai_modDes').innerHTML = "Modificador de Destreza: " + modDes;
-        document.getElementById('ai_modCons').innerHTML = "Modificador de Constituição: " + modCons;
-        document.getElementById('ai_modInt').innerHTML = "Modificador de Inteligência: " + modInt;
-        document.getElementById('ai_modSab').innerHTML = "Modificador de Sabedoria: " + modSab;
-        document.getElementById('ai_modCar').innerHTML = "Modificador de Carisma: " + modCar;
+        document.getElementById('ai_modFor').innerHTML = modFor;
+        document.getElementById('ai_modDes').innerHTML = modDes;
+        document.getElementById('ai_modCons').innerHTML = modCons;
+        document.getElementById('ai_modInt').innerHTML = modInt;
+        document.getElementById('ai_modSab').innerHTML = modSab;
+        document.getElementById('ai_modCar').innerHTML = modCar;
         
-        /* Inicia saveAtributosCombate 
+        /* Inicia saveAtributosCombate */
+
+        //Cálculo de CA
+
         let ca = 10 + modDes; // CA base
         let armadura = document.getElementById('input_armadura').value;
         let escudo = document.getElementById('input_escudo').value;
@@ -627,20 +414,12 @@ width: 100px;
         let armaduraValue = parseInt(armadura, 10);
 
         if (armadura !== "") {
-            ca = caArmadura
-        } else { if (escudo !== "") {
+            ca = caArmadura 
+            else if (escudo !== "") {
             ca = ca + caEscudo ;            
-            } else { if (classeValue === "barbaro") {
-                        ca = ca + modCons; // Bônus de armadura do barbaro
-                    } else { if (classeValue === "monge") {
-                        ca = ca + modSab; // Bônus de armadura do monge
-                    } else if (classeValue === "feiticeiro") {
-                        ca = 13 + modDes; // Bônus de armadura do feiticeiro
-                    } else
-                    
-        }
-        document.getElementById('ai_ca').innerHTML = "Modificador de Força: " + modFor;
-        */
+            }
+        document.getElementById('ai_ca').innerHTML = ca;
+        
         /* Inicio deslocamento*/
         let deslocamento = document.getElementById('input_deslocamento').value;
 
@@ -689,6 +468,19 @@ width: 100px;
         document.getElementById
 
     }
+
+    let noturnoAtv = false;
+    function modoNoturno() {
+        noturnoAtv = !noturnoAtv;
+      
+        if (noturnoAtv) {
+            document.getElementById('style').setAttribute('href', 'style_ noturno.css');
+        } else {
+            document.getElementById('style').setAttribute('href', 'style_diurno.css');
+        }
+    }
+
+
 </script>
 </body>
 </html>
