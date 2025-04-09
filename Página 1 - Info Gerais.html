@@ -21,7 +21,17 @@
             width: 300px;
             padding: 8px;
             margin-left: 10px;
-            border-radius: 50px;
+            border-radius: 5px;
+            background-color: #dbdbdb;
+            border: 1px solid #909091;
+        }
+        input[type="number"] {
+            width: 100px;
+            padding: 8px;
+            margin-left: 10px;
+            border-radius: 5px;
+            background-color: #dbdbdb;
+            border: 1px solid #909091;
         }
         .conteiner {
             margin-bottom: 20px;
@@ -59,71 +69,120 @@
             vertical-align: top;
             height: 550px;
         }
+        /* Estilo do Dropdown */
+        .dropdown {
+            padding: 8px;
+            border-radius: 5px;
+            width: 300px;
+            cursor: pointer;
+            margin-left: 10px;
+            background-color: #dbdbdb;
+            border: 1px solid #909091;
+        }
+
+        /* Efeito de Hover */
+        .dropdown:hover {
+            border-color: #7c7144; /* Dourado */
+        }
+        /* Estilo do Menu Aberto */
+        .dropdown:focus {
+            outline: none;
+            border-color: #7c7144; /* Dourado */
+        }
+        .dropdown option:hover {
+            background-color: #fff;
+            color: #333;
+        }
     </style>    
 </head>
 <body>
    <div class="conteiner">
     <h1>Ficha Dungeons & Dragons</h1>    
-        <div class="column" id="informacoesBasicas">
+        <div class="column" id="informacoesBasicas" onchange="saveInformacoesBasicas()">
             <h2>Informações Básicas</h2>
-            <p>Nome do Personagem <input type="text" id="input_nomePersonagem" placeholder="Digite o nome aqui..." onchange="save()"> </p>
-            <p>Raça <input type="text" id="input_raça" placeholder="Digite a raça aqui..."> </p>
-            <p>Classe <input type="text" id="input_classe" placeholder="Digite a classe aqui..."> </p>
-            <p>Alinhamento <input type="text" id="input_alinhamento" placeholder="Digite o alinhamento aqui..."> </p> 
+            <p>Nome do Personagem <input type="text" id="input_nomePersonagem" placeholder="Digite o nome aqui..."> </p>
+            <p>Raça <select id="input_raca" name="raca" class="dropdown">
+                <option value="">Selecione uma raça</option>
+                <option value="humano">Humano</option>
+                <option value="elfo">Elfo</option>
+                <option value="anao">Anão</option>
+                <option value="halfling">Halfling</option>
+                <option value="draconato">Draconato</option>
+                <option value="troll">Troll</option>
+                <option value="meioElfo">Meio-Elfo</option>
+                <option value="orc">Orc</option>
+                <option value="gnomo">Gnomo</option>
+                <option value="feral">Feral</option>
+            </select>
+            <p>Classe <select id="input_classe" name="classe" class="dropdown">
+                <option value="">Selecione uma classe</option>
+                <option value="guerreiro">Guerreiro</option>
+                <option value="mago">Mago</option>
+                <option value="ladino">Ladino</option>
+                <option value="clerigo">Clérigo</option>
+                <option value="bardo">Bardo</option>
+                <option value="paladino">Paladino</option>
+                <option value="druida">Druida</option>
+                <option value="monge">Monge</option>
+                <option value="feiticeiro">Feiticeiro</option>
+                <option value="bruxo">Bruxo</option>
+                <option value="explorador">Explorador</option>
+                <option value="artifice">Artifice</option>
+                <option value="necromante">Necromante</option>
+            </select> 
+            <p>Alinhamento  <select id="input_alinhamento" name="alinhamento" class="dropdown">
+                <option value="">Selecione um alinhamento...</option>
+                <option value="leal-bom">Leal e Bom</option>
+                <option value="neutro-bom">Neutro e Bom</option>
+                <option value="caotico-bom">Caótico e Bom</option>
+                <option value="leal-neutro">Leal e Neutro</option>
+                <option value="neutro">Neutro</option>
+                <option value="caotico-neutro">Caótico e Neutro</option>
+                <option value="leal-mau">Leal e Mau</option>
+                <option value="neutro-mau">Neutro e Mau</option>
+                <option value="caotico-mau">Caótico e Mau</option>
+            </select> 
             <p>Nome do Jogador <input type="text" id="input_nomeJogador" placeholder="Digite o nome do jogador aqui..."> </p>
-            <p>Experiência <input type="text" id="input_experiencia" placeholder="Digite a experiência aqui..."> </p>
-            <p>Nível <input type="text" id="input_nivel" placeholder="Digite o nível aqui..."> </p>
-            <p>XP para o Próximo Nível <input type="text" id="input_xpProximoNivel" placeholder="Digite a XP para o próximo nível aqui..."> </p>
-            <p>XP Total <input type="text" id="input_xpTotal" placeholder="Digite a XP total aqui..."> </p>
-        </div>
-        <div class="column" id="atrubutosCombate">
-            <h2>Atributos de Combate</h2> 
-            <p>PV Máximo <input type="text" id="input_pvMaximo" placeholder="Digite o PV máximo aqui..."> </p>
-            <p>PV Atual <input type="text" id="input_pvAtual" placeholder="Digite o PV atual aqui..."> </p>
-            <p>PV Temporário <input type="text" id="input_pvTemporario" placeholder="Digite o PV temporário aqui..."> </p>
-            <p>CA <input type="text" id="input_ca" placeholder="Digite a CA aqui..."> </p>
-            <p>Iniciativa <input type="text" id="input_iniciativa" placeholder="Digite a iniciativa aqui..."> </p>
-            <p>Deslocamento <input type="text" id="input_deslocamento" placeholder="Digite o deslocamento aqui..."> </p>
-            <p>Bonus de Proficiência <input type="text" id="input_proficiencia" placeholder="Digite a proficiência aqui..."> </p>
-            <p>Perícias <input type="text" id="input_pericias" placeholder="Digite as perícias aqui..."> </p>
-            <p>Testes de Resistência <input type="text" id="input_testesResistencia" placeholder="Digite os testes de resistência aqui..."> </p> 
+            <p>Experiência <input type="text" id="input_experiencia" placeholder="Digite a experiência aqui..." onchange="nivel()"> </p>
+            <p id="ai_nivel" class="autoIncrement">Nível</p>
+            <p id="ai_xpProximoNivel" class="autoIncrement">XP para o Próximo Nível </p>
         </div>
         <button class="button" id="" onclick="alert('Ficha salva com sucesso!')">Salvar Ficha</button>
     </div>
     
     <div class="conteiner">      
-        <div class="column" id = "atributos">
+        <div class="column" id = "atributos" onchange="saveAtributos()"> 
             <h2>Atributos</h2>
-            <p>Força <input type="text" id="input_forca" placeholder="Digite a força aqui..."> </p>
-            <p>Modificador de Força: </p>
-            <p>Destreza <input type="text" id="input_destreza" placeholder="Digite a destreza aqui..."> </p>
-            <p>Modificador de Destreza: </p>
-            <p>Constituição <input type="text" id="input_constituicao" placeholder="Digite a constituição aqui..."> </p>
-            <p>Modificador de Constituição: </p>
-            <p>Inteligência <input type="text" id="input_inteligencia" placeholder="Digite a inteligência aqui..."> </p>
-            <p>Modificador de Inteligência: </p>
-            <p>Sabedoria <input type="text" id="input_sabedoria" placeholder="Digite a sabedoria aqui..."> </p>
-            <p>Modificador de Sabedoria: </p>
-            <p>Carisma <input type="text" id="input_carisma" placeholder="Digite o carisma aqui..."> </p>
-            <p>Modificador de Carisma: </p>
+            <p>Força <input type="number" max="20" id="input_forca" placeholder="Digite a força aqui..."> </p>
+            <p id="ai_modFor" class="autoIncrement">Modificador de Força: </p>
+            <p>Destreza <input type="number" max="20" id="input_destreza" placeholder="Digite a destreza aqui..."> </p>
+            <p id="ai_modDes" class="autoIncrement">Modificador de Destreza: </p>
+            <p>Constituição <input type="number" max="20" id="input_constituicao" placeholder="Digite a constituição aqui..."> </p>
+            <p  id="ai_modCons" class="autoIncrement">Modificador de Constituição: </p>
+            <p>Inteligência <input type="number" max="20" id="input_inteligencia" placeholder="Digite a inteligência aqui..."> </p>
+            <p id="ai_modInt" class="autoIncrement">Modificador de Inteligência: </p>
+            <p>Sabedoria <input type="number" max="20" id="input_sabedoria" placeholder="Digite a sabedoria aqui..."> </p>
+            <p id="ai_modSab" class="autoIncrement">Modificador de Sabedoria: </p>
+            <p>Carisma <input type="number" max="20" id="input_carisma" placeholder="Digite o carisma aqui..."> </p>
+            <p id="ai_modCar" class="autoIncrement">Modificador de Carisma: </p>
         </div>
-        <div class="column" id="atrubutosCombate">
+        <div class="column" id="atrubutosCombate" onchange="saveAtributosCombate()">
             <h2>Atributos de Combate</h2> 
-            <p>PV Máximo <input type="text" id="input_pvMaximo" placeholder="Digite o PV máximo aqui..."> </p>
-            <p>PV Atual <input type="text" id="input_pvAtual" placeholder="Digite o PV atual aqui..."> </p>
-            <p>PV Temporário <input type="text" id="input_pvTemporario" placeholder="Digite o PV temporário aqui..."> </p>
-            <p>CA <input type="text" id="input_ca" placeholder="Digite a CA aqui..."> </p>
-            <p>Iniciativa <input type="text" id="input_iniciativa" placeholder="Digite a iniciativa aqui..."> </p>
-            <p>Deslocamento <input type="text" id="input_deslocamento" placeholder="Digite o deslocamento aqui..."> </p>
-            <p>Bonus de Proficiência <input type="text" id="input_proficiencia" placeholder="Digite a proficiência aqui..."> </p>
-            <p>Perícias <input type="text" id="input_pericias" placeholder="Digite as perícias aqui..."> </p>
+            <p>PV Máximo <input type="number" id="input_pvMaximo" placeholder="Digite o PV máximo aqui..."> </p>
+            <p>PV Atual <input type="number" id="input_pvAtual" placeholder="Digite o PV atual aqui..."> </p>
+            <p>PV Temporário <input type="number" id="input_pvTemporario" placeholder="Digite o PV temporário aqui..."> </p>
+            <p id="ai_ca" class="autoIncrement">CA</p>
+            <p id="ai_iniciativa" class="autoIncrement">Iniciativa</p>
+            <p id="ai_deslocamento" class="autoIncrement">Deslocamento</p>
+            <p id="ai_proeficiencia" class="autoIncrement">Bonus de Proficiência</p>
+            <p id="ai_sabPassiva" class="autoIncrement">Sabedoria Passiva</p>
             <p>Testes de Resistência <input type="text" id="input_testesResistencia" placeholder="Digite os testes de resistência aqui..."> </p> 
         </div>
         <button class="button" id="" onclick="alert('Ficha salva com sucesso!')">Salvar Ficha</button>
     </div>
     
     <div class="conteiner">      
-        <div class="column" id="habilidades">
+        <div class="column" id="habilidades" onchange="saveHabilidades()">
             <h2>Habilidades</h2>
             <p id="hab1">Acrobacia %trocar% </p>
             <p>Arcanismo </p>
@@ -144,7 +203,7 @@
             <p>Furtividade </p>
             <p>Percepção Passiva </p>
         </div>
-        <div class="column" id="salvaguardas">
+        <div class="column" id="salvaguardas" onchange="saveSalvaguardas()">
             <h2>Salvaguardas</h2>
             <p>Força <input type="text" id="input_forcaSalvaguarda" placeholder="Digite a força aqui..."> </p>
             <p>Destreza <input type="text" id="input_destrezaSalvaguarda" placeholder="Digite a destreza aqui..."> </p>
@@ -157,7 +216,7 @@
     </div>    
 
     <div class="conteiner">      
-        <div class="column" id="ataques">
+        <div class="column" id="ataques"    onchange="saveAtaques()">
             <h2>Ataques</h2>
             <p>Ataque Corpo a Corpo <input type="text" id="input_ataqueCorpoACorpo" placeholder="Digite o ataque corpo a corpo aqui..."> </p>
             <p>Ataque à Distância <input type="text" id="input_ataqueADistancia" placeholder="Digite o ataque à distância aqui..."> </p>
@@ -166,9 +225,32 @@
             <p>Outras Ações <input type="text" id="input_outrosAcoes" placeholder="Digite outras ações aqui..."> </p>
             <p>Outras Reações <input type="text" id="input_outrosReacoes" placeholder="Digite outras reações aqui..."> </p>
         </div>
-        <div class="column" id="equipamentos">
+        <div class="column" id="equipamentos" onchange="saveEquipamentos()">
             <h2>Equipamentos</h2>
-            <p>Armadura <input type="text" id="input_armadura" placeholder="Digite a armadura aqui..."> </p>
+            <p>Armadura <select class="dropdown" id="input_armadura">
+                <option value="">Selecione o tipo de armadura</option>
+                <option value="acolchoada">Acolchoada</option>
+                <option value="couro">Couro</option>
+                <option value="couroBatido">Couro Batido</option>
+                <option value="cotaDeMalha">Cota de Malha</option>
+                <option value="peles">Gibão de Peles</option>
+                <option value="MalhaCompleta">Malha Completa</option>
+                <option value="cotaDeEscamas">Cota de Escamas/Brunea</option>
+                <option value="couraca">Couraça</option>
+                <option value="armaduraDePlacas">Armadura de Placas</option>
+                <option value="armaduraCompleta">Armadura Completa</option>
+                <option value="armaduraDeEscamas">Armadura de Escamas</option>
+                <option value="armaduraDeCouro">Armadura de Couro</option>
+
+              
+            </select>
+            </p>
+            <p>Escudo <select class="dropdown" id="input_escudo">
+                <option value="escudoleve">Escudo Leve</option>
+                <option value="escudopesado">Escudo Pesado</option>
+                <option value="escudoDeCorpo">Escudo de Corpo </option>
+                <option value="true">Sim</option>
+            </select></p>
             <p>Arma Primária <input type="text" id="input_armaPrimaria" placeholder="Digite a arma primária aqui..."> </p>
             <p>Arma Secundária <input type="text" id="input_armaSecundaria" placeholder="Digite a arma secundária aqui..."> </p>
             <p>Itens Mágicos <input type="text" id="input_itensMagicos" placeholder="Digite os itens mágicos aqui..."> </p>
@@ -182,7 +264,7 @@
     </div> 
     
     <div class="conteiner">      
-        <div class="column" id="historia">
+        <div class="column" id="historia" onchange="saveHistoria()">
             <h2>História</h2>
             <p>História do Personagem <input type="text" id="input_historiaPersonagem" placeholder="Digite a história do personagem aqui..."> </p>
             <p>Motivação <input type="text" id="input_motivacao" placeholder="Digite a motivação aqui..."> </p>
@@ -192,7 +274,7 @@
             <p>Notas <input type="text" id="input_notas" placeholder="Digite as notas aqui..."> </p>
             <p>Inspiração <input type="text" id="input_inspiracao" placeholder="Digite a inspiração aqui..."> </p>
         </div>
-        <div class="column" id="proficiências">
+        <div class="column" id="proficiências" onchange="saveProficiências()">
             <h2>Proficiências</h2>
             <p>Proficiências de Armadura<input type="text" id="input_proficiênciasArmadura" placeholder="Digite as proficiências aqui..."> </p>
             <p>Proficiências de Arma <input type="text" id="input_proficiênciasArma" placeholder="Digite as proficiências aqui..."> </p>
@@ -203,16 +285,191 @@
         <button class="button" id="" onclick="alert('Ficha salva com sucesso!')">Salvar Ficha</button>
     </div> 
 <script id="salvar">
-    function save() {
+    function saveInformacoesBasicas() {
         let id = document.getElementById('input_nomePersonagem').id.value; // Obter o ID do elemento
-        let nome = document.getElementById('input_nomePersonagem');                
-            if(nome.value !== ""){
-                alert(`Xerequinha salva!`);
-                nome.value = ""; // Limpar o campo após salvar
-            } else{
-                alert("Xerequinha não salva!");
-            }
+        let nomeValue = document.getElementById('input_nomePersonagem');
+        let racaValue = document.getElementById('input_raca').value;
+        let classeValue = document.getElementById('input_classe').value;
+        let alinhamentoValue = document.getElementById('input_alinhamento').value;
+        let jogadorValue = document.getElementById('input_nomeJogador').value;
+        let experienciaValue = document.getElementById('input_experiencia').value;
         }
+    function nivel() {
+        let nivel = 0;
+        let xpProximoNivel = 0;
+        let xpAtual = document.getElementById('input_experiencia').value;
+        let numXpAtual = parseInt(xpAtual, 10);
+        if (numXpAtual < 300) {
+            nivel = 1;
+        } else if (numXpAtual >= 300 && numXpAtual < 900) {
+            nivel = 2;
+            xpProximoNivel = 900;
+        } else if (numXpAtual >= 900 && numXpAtual < 2700) {
+            nivel = 3;
+            xpProximoNivel = 2700;
+        } else if (numXpAtual >= 2700 && numXpAtual < 6500) {
+            nivel = 4;
+            xpProximoNivel = 6500;
+        } else if (numXpAtual >= 6500 && numXpAtual < 14000) {
+            nivel = 5;
+            xpProximoNivel = 14000;
+        } else if (numXpAtual >= 14000 && numXpAtual < 23000) {
+            nivel = 6;
+            xpProximoNivel = 23000;
+        } else if (numXpAtual >= 23000 && numXpAtual < 34000) {
+            nivel = 7;
+            xpProximoNivel = 34000;
+        } else if (numXpAtual >= 34000 && numXpAtual < 48000) {
+            nivel = 8;
+            xpProximoNivel = 48000;
+        } else if (numXpAtual >= 48000 && numXpAtual < 64000) {
+            nivel = 9;
+            xpProximoNivel = 64000;            
+        } else if (numXpAtual >= 64000 && numXpAtual < 85000) {
+            nivel = 10;
+            xpProximoNivel = 85000;
+        } else if (numXpAtual >= 85000 && numXpAtual < 100000) {
+            nivel = 11;
+            xpProximoNivel = 100000;
+        } else if (numXpAtual >= 100000 && numXpAtual < 120000) {
+            nivel = 12;
+            xpProximoNivel = 120000;
+        } else if (numXpAtual >= 120000 && numXpAtual < 140000) {
+            nivel = 13;
+            xpProximoNivel = 140000;
+        } else if (numXpAtual >= 140000 && numXpAtual < 165000) {
+            nivel = 14;
+            xpProximoNivel = 165000;
+        } else if (numXpAtual >= 165000 && numXpAtual < 195000) {
+            nivel = 15;
+            xpProximoNivel = 195000;
+        } else if (numXpAtual >= 195000 && numXpAtual < 225000) {
+            nivel = 16;
+            xpProximoNivel = 225000;
+        } else if (numXpAtual >= 225000 && numXpAtual < 265000) {
+            nivel = 17;
+            xpProximoNivel = 265000;
+        } else if (numXpAtual >= 265000 && numXpAtual < 305000) {
+            nivel = 18;
+            xpProximoNivel = 305000;
+        } else if (numXpAtual >= 305000 && numXpAtual < 355000) {
+            nivel = 19;
+            xpProximoNivel = 355000;
+        } else if (numXpAtual >= 355000) {
+            nivel = 20;
+        } else {
+            nivel = 0;
+        }
+        let xpFaltando = xpProximoNivel - numXpAtual;
+        document.getElementById('ai_nivel').innerHTML = "Nível: " + nivel;
+        document.getElementById('ai_xpProximoNivel').innerHTML = "XP para o Próximo Nível: " + xpFaltando;
+        
+        // Proeficiência
+
+        let proeficiencia = 2
+        let numNivel = parseInt(nivel, 10);
+        if (numNivel > 4 && numNivel <= 8) {
+            proeficiencia = 3;
+        } else if (numNivel > 8 && numNivel <= 12) {
+            proeficiencia = 4;
+        } else if (numNivel > 12 && numNivel <= 16) {
+            proeficiencia = 5;
+        } else if (numNivel > 16 && numNivel <= 20) {
+            proeficiencia = 6;
+        } else if (numNivel > 20) {
+            proeficiencia = 7;
+        }
+        document.getElementById('ai_proeficiencia').innerHTML = "Bônus de Proficiência: " + proeficiencia;
+    }
+    function saveAtributos() {
+        let forca = document.getElementById('input_forca').value;
+        let numForca = parseInt(forca, 10);
+        let destreza = document.getElementById('input_destreza').value;
+        let constituicao = document.getElementById('input_constituicao').value;
+        let inteligencia = document.getElementById('input_inteligencia').value;
+        let sabedoria = document.getElementById('input_sabedoria').value;
+        let carisma = document.getElementById('input_carisma').value;
+        if (numForca > 20) {
+            forca = 20;
+        } else {
+            forca = parseInt(forca, 10);
+        }
+        let modFor = Math.floor((forca - 10) / 2);
+        let modDes = Math.floor((destreza - 10) / 2);
+        let modCons = Math.floor((constituicao - 10) / 2);
+        let modInt = Math.floor((inteligencia - 10) / 2);
+        let modSab = Math.floor((sabedoria - 10) / 2);
+        let modCar = Math.floor((carisma - 10) / 2);
+        document.getElementById('ai_modFor').innerHTML = "Modificador de Força: " + modFor;
+        document.getElementById('ai_modDes').innerHTML = "Modificador de Destreza: " + modDes;
+        document.getElementById('ai_modCons').innerHTML = "Modificador de Constituição: " + modCons;
+        document.getElementById('ai_modInt').innerHTML = "Modificador de Inteligência: " + modInt;
+        document.getElementById('ai_modSab').innerHTML = "Modificador de Sabedoria: " + modSab;
+        document.getElementById('ai_modCar').innerHTML = "Modificador de Carisma: " + modCar;
+        
+        /* Inicia saveAtributosCombate 
+        let ca = 10 + modDes; // CA base
+        let armadura = document.getElementById('input_armadura').value;
+        let escudo = document.getElementById('input_escudo').value;
+        let caEscudo = 0;
+        let caArmadura = 0;
+        let armaduraValue = parseInt(armadura, 10);
+
+        if (armadura !== "") {
+            ca = caArmadura
+        } else { if (escudo !== "") {
+            ca = ca + caEscudo ;            
+            } else { if (classeValue === "barbaro") {
+                        ca = ca + modCons; // Bônus de armadura do barbaro
+                    } else { if (classeValue === "monge") {
+                        ca = ca + modSab; // Bônus de armadura do monge
+                    } else if (classeValue === "feiticeiro") {
+                        ca = 13 + modDes; // Bônus de armadura do feiticeiro
+                    } else
+                    
+        }
+        document.getElementById('ai_ca').innerHTML = "Modificador de Força: " + modFor;
+        */
+        /* Inicio deslocamento*/
+        let deslocamento = document.getElementById('input_deslocamento').value;
+
+         /*Inicio Sabedoria Passiva*/
+         const proPercepcao = false
+        proeficiencia = document.getElementById('ai_proeficiencia').innerHTML; // Obter o valor do bônus de proficiência
+        const numProeficiencia = parseInt(proeficiencia, 10); // Converter para número
+        if (proPercepcao) {
+            sabPassiva = 10 + numProeficiencia + modSab
+        } else {
+            sabPassiva = 10 + modSab
+        }
+        document.getElementById('ai_sabPassiva').innerHTML = "Sabedoria Passiva: " + sabPassiva;
+        /* Fim Sabedoria Passiva */
+    }
+    function saveAtributosCombate() {
+        const classe = document.getElementById('input_raca').value; // Obter o valor da classe
+        let sobrecarga = false;
+        let grandeSobrecarga = false;
+
+        if (classe == "anao" || classe == "gnomo" || classe == "halfling") {
+            deslocamento = 7.5;
+        } else if (classe === "elfo" || classe === "meioElfo" || classe === "draconato" || classe === "orc" || classe === "humano") {
+            deslocamento = 9;
+        } else if (classe === "feral" || classe === "troll") {
+            deslocamento = 10.5;
+        } else {
+            deslocamento = 9;
+        }
+        
+        if (sobrecarga)
+            deslocamento = deslocamento - 3; // Reduzir 1.5 metros se sobrecarregado
+        if (grandeSobrecarga)
+            deslocamento = deslocamento - 6; // Reduzir 3 metros se grande sobrecarregado
+
+        document.getElementById('ai_deslocamento').innerHTML = "Deslocamento: " + deslocamento + " metros";
+
+       
+        
+    }
 </script>
 </body>
 </html>
