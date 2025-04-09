@@ -1,53 +1,184 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ficha Dungeons & Dragons</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 20px;
-        }
-        h1, h2 {
-            color: #333;
-        }
-        p {
-            margin: 10px 0;
-        }
-        input[type="text"] {
-            width: 300px;
-            padding: 8px;
-            margin-left: 10px;
-        }
-    </style>    
+    <title>Ficha de Dungeons & Dragons 5e - Detalhada</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <input type="number" id="nome" placeholder="Nome do Personagem"> 
-    <button onclick="xerequinha()">Salvar Ficha</button>
-    <div id="salvo"></div>
-    
-    <script id="salvar">
-        
-        // Função para enviar os dados para o webhook
-        function xerequinha() {
-            var nome = document.getElementById('nome').value;
-            var number = parseInt(nome, 10);
-            var salvo = document.getElementById('salvo');
-            if(nome !== ""){
-                salvo.innerHTML = "Xerequinha salva!";
-            alert("Xerequinha salva!");
-            }
-            else{
-            alert("Xerequinha não salva!");
-            }
-        }
 
-    </script>
-    <script src="config.js"></script>
+<div class="container">
+    <!-- Cabeçalho -->
+    <header class="header">
+        <h1 id="character-name">Nome do Personagem</h1>
+        <h2 id="player-name">Nome do Jogador</h2>
+        <h3 id="character-class-level">Classe: Nível</h3>
+    </header>
 
+    <!-- Informações Básicas -->
+    <section class="basic-info">
+        <h4>Informações Básicas</h4>
+        <div class="info-item">
+            <label for="race">Raça:</label>
+            <input type="text" id="race" name="race" placeholder="Ex: Humano, Elfo">
+        </div>
+        <div class="info-item">
+            <label for="background">Antecedente:</label>
+            <input type="text" id="background" name="background" placeholder="Ex: Nobre, Soldado">
+        </div>
+        <div class="info-item">
+            <label for="alignment">Alinhamento:</label>
+            <input type="text" id="alignment" name="alignment" placeholder="Ex: Neutro Bom">
+        </div>
+        <div class="info-item">
+            <label for="xp">XP:</label>
+            <input type="number" id="xp" name="xp" placeholder="Ex: 1000">
+        </div>
+    </section>
+
+    <!-- Atributos -->
+    <section class="attributes">
+        <h4>Atributos</h4>
+        <div class="attribute">
+            <label for="strength">Força</label>
+            <input type="number" id="strength" name="strength" value="10">
+        </div>
+        <div class="attribute">
+            <label for="dexterity">Destreza</label>
+            <input type="number" id="dexterity" name="dexterity" value="10">
+        </div>
+        <div class="attribute">
+            <label for="constitution">Constituição</label>
+            <input type="number" id="constitution" name="constitution" value="10">
+        </div>
+        <div class="attribute">
+            <label for="intelligence">Inteligência</label>
+            <input type="number" id="intelligence" name="intelligence" value="10">
+        </div>
+        <div class="attribute">
+            <label for="wisdom">Sabedoria</label>
+            <input type="number" id="wisdom" name="wisdom" value="10">
+        </div>
+        <div class="attribute">
+            <label for="charisma">Carisma</label>
+            <input type="number" id="charisma" name="charisma" value="10">
+        </div>
+    </section>
+
+    <!-- Perícias -->
+    <section class="skills">
+        <h4>Perícias</h4>
+        <div class="skill">
+            <label for="acrobatics">Acrobacia</label>
+            <input type="checkbox" id="acrobatics" name="acrobatics">
+        </div>
+        <div class="skill">
+            <label for="animal-handling">Manejo de Animais</label>
+            <input type="checkbox" id="animal-handling" name="animal-handling">
+        </div>
+        <div class="skill">
+            <label for="arcana">Arcanismo</label>
+            <input type="checkbox" id="arcana" name="arcana">
+        </div>
+        <div class="skill">
+            <label for="athletics">Atletismo</label>
+            <input type="checkbox" id="athletics" name="athletics">
+        </div>
+        <div class="skill">
+            <label for="deception">Enganação</label>
+            <input type="checkbox" id="deception" name="deception">
+        </div>
+        <div class="skill">
+            <label for="history">História</label>
+            <input type="checkbox" id="history" name="history">
+        </div>
+        <div class="skill">
+            <label for="insight">Perspicácia</label>
+            <input type="checkbox" id="insight" name="insight">
+        </div>
+        <div class="skill">
+            <label for="intimidation">Intimidação</label>
+            <input type="checkbox" id="intimidation" name="intimidation">
+        </div>
+        <div class="skill">
+            <label for="medicine">Medicina</label>
+            <input type="checkbox" id="medicine" name="medicine">
+        </div>
+        <div class="skill">
+            <label for="nature">Natureza</label>
+            <input type="checkbox" id="nature" name="nature">
+        </div>
+        <div class="skill">
+            <label for="perception">Percepção</label>
+            <input type="checkbox" id="perception" name="perception">
+        </div>
+        <div class="skill">
+            <label for="performance">Performance</label>
+            <input type="checkbox" id="performance" name="performance">
+        </div>
+        <div class="skill">
+            <label for="persuasion">Persuasão</label>
+            <input type="checkbox" id="persuasion" name="persuasion">
+        </div>
+        <div class="skill">
+            <label for="religion">Religião</label>
+            <input type="checkbox" id="religion" name="religion">
+        </div>
+        <div class="skill">
+            <label for="sleight-of-hand">Furtividade</label>
+            <input type="checkbox" id="sleight-of-hand" name="sleight-of-hand">
+        </div>
+        <div class="skill">
+            <label for="stealth">Furtividade</label>
+            <input type="checkbox" id="stealth" name="stealth">
+        </div>
+        <div class="skill">
+            <label for="survival">Sobrevivência</label>
+            <input type="checkbox" id="survival" name="survival">
+        </div>
+    </section>
+
+    <!-- Equipamento -->
+    <section class="equipment">
+        <h4>Equipamento</h4>
+        <div class="equipment-item">
+            <label for="weapon">Arma</label>
+            <input type="text" id="weapon" name="weapon" placeholder="Ex: Espada, Arco">
+        </div>
+        <div class="equipment-item">
+            <label for="armor">Armadura</label>
+            <input type="text" id="armor" name="armor" placeholder="Ex: Armadura de Couro">
+        </div>
+        <div class="equipment-item">
+            <label for="shield">Escudo</label>
+            <input type="text" id="shield" name="shield" placeholder="Ex: Escudo de Ferro">
+        </div>
+    </section>
+
+    <!-- Magias -->
+    <section class="spells">
+        <h4>Magias</h4>
+        <div class="spells-section">
+            <label for="spells-level-1">Magias de 1º Nível</label>
+            <textarea id="spells-level-1" name="spells-level-1" rows="4" placeholder="Ex: Mísseis Mágicos, Escudo Arcano..."></textarea>
+        </div>
+        <div class="spells-section">
+            <label for="spells-level-2">Magias de 2º Nível</label>
+            <textarea id="spells-level-2" name="spells-level-2" rows="4" placeholder="Ex: Bola de Fogo, Invisibilidade..."></textarea>
+        </div>
+        <div class="spells-section">
+            <label for="spells-level-3">Magias de 3º Nível</label>
+            <textarea id="spells-level-3" name="spells-level-3" rows="4" placeholder="Ex: Relâmpago, Mão Flamejante..."></textarea>
+        </div>
+    </section>
+
+    <!-- Histórico e Notas -->
+    <section class="history">
+        <h4>Histórico e Notas</h4>
+        <textarea id="history" name="history" placeholder="Escreva o histórico do personagem aqui..." rows="5"></textarea>
+    </section>
+</div>
 
 </body>
 </html>
