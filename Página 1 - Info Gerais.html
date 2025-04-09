@@ -136,7 +136,7 @@ button {
     background-color: #cacaca;
     border: 1px solid #909091; 
 }
-/*.autoIncrement { 
+.autoIncrement { 
     padding: 10px;
     margin-left: 10px;
     border-radius: 5px;
@@ -146,7 +146,7 @@ button {
     background-color: #cacaca;
     border: 1px solid #909091; 
 }
-    */
+
 .textarea {
     padding: 10px;
     margin-left: 10px;
@@ -287,10 +287,10 @@ width: 100px;
             </select> 
             <p>Nome do Jogador <input type="text" id="input_nomeJogador" placeholder="Digite o nome do jogador aqui..."> </p>
             <p>Experiência <input type="text" id="input_experiencia" placeholder="Digite a experiência aqui..." onchange="nivel()"> </p>
-            <p id="ai_nivel" class="autoIncrement">Nível</p>
-            <p id="ai_xpProximoNivel" class="autoIncrement">XP para o Próximo Nível </p>
-            <p>Inspiração <text class="modHab" id="ai_inspiracao"> 0 </text></p>
-            <p>Dado de Vida <text class="modHab" id="ai_dadoVida"> d0 </text></p>
+            <p>Nível <text id="ai_nivel" class="autoIncrement">0</text></p>
+            <p>XP para o Próximo Nível <text id="ai_xpProximoNivel" class="autoIncrement">0</text></p>
+            <p>Inspiração <text class="autoIncrement" id="ai_inspiracao"> 0 </text></p>
+            <p>Dado de Vida <text class="autoIncrement" id="ai_dadoVida"> d0 </text></p>
             <div>
                 <p> <strong>Salvaguarda de Morte</strong> </p>
                 <p>Sucessos <input type="checkbox" id="boxSucessoMorte1" class="checkbox" >
@@ -307,29 +307,23 @@ width: 100px;
     <div class="conteiner">      
         <div class="column" id = "atributos" onchange="saveAtributos()"> 
             <h2>Atributos</h2>
-            <p>Força <input type="number" max="20" id="input_forca" placeholder="Digite a força aqui..."> </p>
-            <p id="ai_modFor" class="autoIncrement">Modificador de Força: </p>
-            <p>Destreza <input type="number" max="20" id="input_destreza" placeholder="Digite a destreza aqui..."> </p>
-            <p id="ai_modDes" class="autoIncrement">Modificador de Destreza: </p>
-            <p>Constituição <input type="number" max="20" id="input_constituicao" placeholder="Digite a constituição aqui..."> </p>
-            <p  id="ai_modCons" class="autoIncrement">Modificador de Constituição: </p>
-            <p>Inteligência <input type="number" max="20" id="input_inteligencia" placeholder="Digite a inteligência aqui..."> </p>
-            <p id="ai_modInt" class="autoIncrement">Modificador de Inteligência: </p>
-            <p>Sabedoria <input type="number" max="20" id="input_sabedoria" placeholder="Digite a sabedoria aqui..."> </p>
-            <p id="ai_modSab" class="autoIncrement">Modificador de Sabedoria: </p>
-            <p>Carisma <input type="number" max="20" id="input_carisma" placeholder="Digite o carisma aqui..."> </p>
-            <p id="ai_modCar" class="autoIncrement">Modificador de Carisma: </p>
+            <p>Força <input type="number" max="20" id="input_forca" placeholder="Digite a força aqui..."> Modificador: <text id="ai_modFor" class="autoIncrement">0</text></p>
+            <p>Destreza <input type="number" max="20" id="input_destreza" placeholder="Digite a destreza aqui..."> Modificador: <text id="ai_modDes" class="autoIncrement">0</text></p>
+            <p>Constituição <input type="number" max="20" id="input_constituicao" placeholder="Digite a constituição aqui..."> Modificador: <text  id="ai_modCons" class="autoIncrement">0</text></p>
+            <p>Inteligência <input type="number" max="20" id="input_inteligencia" placeholder="Digite a inteligência aqui..."> Modificador: <text id="ai_modInt" class="autoIncrement">0</text></p>
+            <p>Sabedoria <input type="number" max="20" id="input_sabedoria" placeholder="Digite a sabedoria aqui..."> Modificador: <text id="ai_modSab" class="autoIncrement">0</text></p>
+            <p>Carisma <input type="number" max="20" id="input_carisma" placeholder="Digite o carisma aqui..."> Modificador: <text id="ai_modCar" class="autoIncrement">0 </text></p>
         </div>
         <div class="column" id="atrubutosCombate" onchange="saveAtributosCombate()">
             <h2>Atributos de Combate</h2> 
             <p>PV Máximo <input type="number" id="input_pvMaximo" placeholder="Digite o PV máximo aqui..."> </p>
             <p>PV Atual <input type="number" id="input_pvAtual" placeholder="Digite o PV atual aqui..."> </p>
             <p>PV Temporário <input type="number" id="input_pvTemporario" placeholder="Digite o PV temporário aqui..."> </p>
-            <p id="ai_ca" class="autoIncrement">CA</p>
-            <p id="ai_iniciativa" class="autoIncrement">Iniciativa</p>
-            <p id="ai_deslocamento" class="autoIncrement">Deslocamento</p>
-            <p id="ai_proeficiencia" class="autoIncrement">Bonus de Proficiência</p>
-            <p id="ai_sabPassiva" class="autoIncrement">Sabedoria Passiva</p>
+            <p>CA<text id="ai_ca" class="autoIncrement">0</p>
+            <p>Iniciativa<text id="ai_iniciativa" class="autoIncrement">0</text></p>
+            <p>Deslocamento<text id="ai_deslocamento" class="autoIncrement">0</text></p>
+            <p>Bonus de Proficiência<text id="ai_proeficiencia" class="autoIncrement">0</text></p>
+            <p>Sabedoria Passiva<text id="ai_sabPassiva" class="autoIncrement">0</text></p>
             <p>Testes de Resistência <input type="text" id="input_testesResistencia" placeholder="Digite os testes de resistência aqui..."> </p> 
         </div>
         <button class="button" id="" onclick="alert('Ficha salva com sucesso!')">Salvar Ficha</button>
@@ -338,34 +332,33 @@ width: 100px;
     <div class="conteiner">      
         <div class="column" id="habilidades" onchange="saveHabilidades()">
             <h2>Habilidades</h2>
-            <p> <input type="checkbox" id="boxHabAcrobacia" class="checkbox" disabled >Acrobacia <i> (Destreza) </i> </checkbox> <text class="modHab" id="modDes"> + 0 </text> </p>
-            <p> <input type="checkbox" id="boxHabArcanismo" class="checkbox" disabled >Arcanismo </checkbox> <text class="modHab" id="modHab"> + 0 </text></p>
-            <p> <input type="checkbox" id="boxHabAtletismo" class="checkbox" disabled >Atletismo </checkbox> <text class="modHab" id="modHab"> + 0 </text></p>
-            <p> <input type="checkbox" id="boxHabAtuacao" class="checkbox" disabled >Atuação </checkbox> <text class="modHab" id="modHab"> + 0 </text></p>
-            <p> <input type="checkbox" id="boxHabEnganacao" class="checkbox" disabled >Enganação </checkbox> <text class="modHab" id="modHab"> + 0 </text></p>
-            <p> <input type="checkbox" id="boxHabFurtividade" class="checkbox" disabled >Furtividade </checkbox> <text class="modHab" id="modHab"> + 0 </text></p>
-            <p> <input type="checkbox" id="boxHabHistoria" class="checkbox" disabled >História </checkbox> <text class="modHab" id="modHab"> + 0 </text></p>
-            <p> <input type="checkbox" id="boxHabIntimidacao" class="checkbox" disabled >Intimidação <text class="modHab" id="modHab"> + 0 </text></checkbox> </p>
-            <p> <input type="checkbox" id="boxHabIntuicao" class="checkbox" disabled >Intuição </checkbox> <text class="modHab" id="modHab"> + 0 </text></p>
-            <p> <input type="checkbox" id="boxHabInvestigacao" class="checkbox" disabled >Investigação </checkbox> <text class="modHab" id="modHab"> + 0 </text></p>
-            <p> <input type="checkbox" id="boxHabMedicina" class="checkbox" disabled >Medicina </checkbox> <text class="modHab" id="modHab"> + 0 </text></p>
-            <p> <input type="checkbox" id="boxHabNatureza" class="checkbox" disabled >Natureza </checkbox> <text class="modHab" id="modHab"> + 0 </text></p>
-            <p> <input type="checkbox" id="boxHabPercepcao" class="checkbox" disabled >Percepção </checkbox> <text class="modHab" id="modHab"> + 0 </text></p>
-            <p> <input type="checkbox" id="boxHabPersuasao" class="checkbox" disabled >Persuasão </checkbox> <text class="modHab" id="modHab"> + 0 </text></p>
-            <p> <input type="checkbox" id="boxHabReligiao" class="checkbox" disabled >Religião </checkbox> <text class="modHab" id="modHab"> + 0 </text></p>
-            <p> <input type="checkbox" id="boxHabSobrevivencia" class="checkbox" disabled >Sobrevivência </checkbox> <text class="modHab" id="modHab"> + 0 </text></p>
-            <p> <input type="checkbox" id="boxHabFurtividade" class="checkbox" disabled >Furtividade </checkbox> <text class="modHab" id="modHab"> + 0 </text></p>
-            <p> <input type="checkbox" id="boxHabPercepcaoPassiva" class="checkbox" disabled >Percepção Passiva </checkbox> <text class="modHab" id="modHab"> + 0 </text></p>
-            <p> <input type="checkbox" id="boxHabDesarmarArmadilhas" class="checkbox" disabled >Desarmar Armadilhas </checkbox> <text class="modHab" id="modHab"> + 0 </text></p>
+            <p> <input type="checkbox" id="boxHabAcrobacia" class="checkbox" >Acrobacia <i> (Destreza) </i> </checkbox> <text class="autoIncrement" id="modDes"> + 0 </text> </p>
+            <p> <input type="checkbox" id="boxHabArcanismo" class="checkbox" >Arcanismo <i> (Inteligência) </i></checkbox> <text class="autoIncrement" id="modInt"> + 0 </text></p>
+            <p> <input type="checkbox" id="boxHabAtletismo" class="checkbox" >Atletismo <i> (Força) </i></checkbox> <text class="autoIncrement" id="modFor"> + 0 </text></p>
+            <p> <input type="checkbox" id="boxHabAtuacao" class="checkbox" >Atuação <i> (Carisma) </i></checkbox> <text class="autoIncrement" id="modCar"> + 0 </text></p>
+            <p> <input type="checkbox" id="boxHabEnganacao" class="checkbox" >Enganar/Blefar <i> (Carisma) </i></checkbox> <text class="autoIncrement" id="modCar"> + 0 </text></p>
+            <p> <input type="checkbox" id="boxHabAcrobacia" class="checkbox" >Lidar com Animais <i> (Sabedoria) </i> </checkbox> <text class="autoIncrement" id="modSab"> + 0 </text> </p>
+            <p> <input type="checkbox" id="boxHabFurtividade" class="checkbox" >Furtividade <i> (Destreza) </i></checkbox> <text class="autoIncrement" id="modDes"> + 0 </text></p>
+            <p> <input type="checkbox" id="boxHabHistoria" class="checkbox" >História <i> (Inteligência) </i></checkbox> <text class="autoIncrement" id="modInt"> + 0 </text></p>
+            <p> <input type="checkbox" id="boxHabIntimidacao" class="checkbox" >Intimidação <i> (Carisma) </i><text class="autoIncrement" id="modCar"> + 0 </text></checkbox> </p>
+            <p> <input type="checkbox" id="boxHabIntuicao" class="checkbox" >Intuição <i> (Sabedoria) </i></checkbox> <text class="autoIncrement" id="modSab"> + 0 </text></p>
+            <p> <input type="checkbox" id="boxHabInvestigacao" class="checkbox" >Investigação <i> (inteligência) </i></checkbox> <text class="autoIncrement" id="modInt"> + 0 </text></p>
+            <p> <input type="checkbox" id="boxHabMedicina" class="checkbox" >Medicina <i> (Sabedoria) </i></checkbox> <text class="autoIncrement" id="modSab"> + 0 </text></p>
+            <p> <input type="checkbox" id="boxHabNatureza" class="checkbox" >Natureza <i> (Inteligência) </i></checkbox> <text class="autoIncrement" id="modInt"> + 0 </text></p>
+            <p> <input type="checkbox" id="boxHabPercepcao" class="checkbox" >Percepção <i> (Sabedoria) </i></checkbox> <text class="autoIncrement" id="modSab"> + 0 </text></p>
+            <p> <input type="checkbox" id="boxHabPersuasao" class="checkbox" >Persuasão <i> (Carisma) </i></checkbox> <text class="autoIncrement" id="modCar"> + 0 </text></p>
+            <p> <input type="checkbox" id="boxHabReligiao" class="checkbox" >Religião <i> (Inteligência) </i></checkbox> <text class="autoIncrement" id="modInt"> + 0 </text></p>
+            <p> <input type="checkbox" id="boxHabSobrevivencia" class="checkbox" >Sobrevivência <i> (Sabedoria) </i></checkbox> <text class="autoIncrement" id="modSab"> + 0 </text></p>
+            <p> <input type="checkbox" id="boxHabFurtividade" class="checkbox" >Furtividade <i> (Destreza) </i></checkbox> <text class="autoIncrement" id="modDes"> + 0 </text></p>
         </div>
         <div class="column" id="salvaguardas" onchange="saveSalvaguardas()">
             <h2>Salvaguardas</h2>
-            <p> <input type="checkbox" id="boxSalvForca" class="checkbox" disabled > Força <text class="modHab" id="ai_forcaSalvaguarda"> + 0 </text></p>
-            <p> <input type="checkbox" id="boxSalvDestreza" class="checkbox" disabled > Destreza <text class="modHab" id="ai_destrezaSalvaguarda"> + 0 </text></p>
-            <p> <input type="checkbox" id="boxSalvConstituicao" class="checkbox" disabled > Constituição <text class="modHab" id="ai_constituicaoSalvaguarda"> + 0 </text> </p>
-            <p> <input type="checkbox" id="boxSalvInteligencia" class="checkbox" disabled > Inteligência <text class="modHab" id="ai_inteligenciaSalvaguarda"> + 0 </text> </p>
-            <p> <input type="checkbox" id="boxSalvSabedoria" class="checkbox" disabled > Sabedoria <text class="modHab" id="ai_sabedoriaSalvaguarda"> + 0 </text></p>
-            <p> <input type="checkbox" id="boxSalCarisma" class="checkbox" disabled >Carisma <text class="modHab" id="ai_carismaSalvaguarda"> + 0 </text></p>
+            <p> <input type="checkbox" id="boxSalvForca" class="checkbox" > Força <text class="autoIncrement" id="ai_forcaSalvaguarda"> + 0 </text></p>
+            <p> <input type="checkbox" id="boxSalvDestreza" class="checkbox" > Destreza <text class="autoIncrement" id="ai_destrezaSalvaguarda"> + 0 </text></p>
+            <p> <input type="checkbox" id="boxSalvConstituicao" class="checkbox" > Constituição <text class="autoIncrement" id="ai_constituicaoSalvaguarda"> + 0 </text> </p>
+            <p> <input type="checkbox" id="boxSalvInteligencia" class="checkbox" > Inteligência <text class="autoIncrement" id="ai_inteligenciaSalvaguarda"> + 0 </text> </p>
+            <p> <input type="checkbox" id="boxSalvSabedoria" class="checkbox" > Sabedoria <text class="autoIncrement" id="ai_sabedoriaSalvaguarda"> + 0 </text></p>
+            <p> <input type="checkbox" id="boxSalCarisma" class="checkbox" >Carisma <text class="autoIncrement" id="ai_carismaSalvaguarda"> + 0 </text></p>
         </div>
         <button class="button" id="" onclick="alert('Ficha salva com sucesso!')">Salvar Ficha</button>
     </div>    
@@ -437,7 +430,7 @@ width: 100px;
                 </select></p>
             </div>
             <p>Outros Ataques <textarea type="text"class="textarea" id="input_outrosAtaques" placeholder="Digite outros ataques aqui..."></textarea> </p>
-            <p>Outras Ações <textarea type="text" class="textarea" id="input_outrosAcoes" placeholder="Digite outras ações aqui..."> </textarea> </p>
+            <p>Outras Ações <textarea type="text" class="textarea" id="input_outrosAcoes" placeholder="Digite outras ações aqui..."></textarea> </p>
             <p>Outras Reações <textarea type="text" class="textarea" id="input_outrosReacoes" placeholder="Digite outras reações aqui..."></textarea> </p>
         </div>
         <div class="column" id="equipamentos" onchange="saveEquipamentos()">
@@ -473,9 +466,8 @@ width: 100px;
                 <p>Arma Secundária</p>
                 <input type="text" class="nomeArma" id="input_armaSecundaria" placeholder="Digite a arma secundária aqui..."><input type="text" class="danoArma" id="danoArmaSecundaria" placeholder="Dano..."> <input type="text" class="efeitoArma" id="efeitoArmaSecundaria" placeholder="Efeito...">
             </div>    
-            <p>Itens Mágicos <input type="text" id="input_itensMagicos" placeholder="Digite os itens mágicos aqui..."> </p>
-            <p>Outros Itens <input type="text" id="input_outrosItens" placeholder="Digite outros itens aqui..."> </p>
-            <p>Dinheiro </p>
+            <p>Itens Mágicos <textarea type="text" class="textarea" id="input_itensMagicos" placeholder="Digite os itens mágicos aqui..."></textarea> </p>
+            <p>Outros Itens <textarea type="text" class="textarea" id="input_outrosItens" placeholder="Digite outros itens aqui..."></textarea> </p>
             <p><label for="input_moedaOuro">Moedas de Ouro:</label> <input type="number" id="input_moedaOuro" placeholder="0"></p> 
             <p><label for="input_moedaPrata">Moedas de Prata:</label> <input type="number" id="input_moedaPrata" placeholder="0"></p>
             <p><label for="input_moedaCobre">Moedas de Cobre:</label> <input type="number" id="input_moedaCobre" placeholder="0"></p>
@@ -495,11 +487,11 @@ width: 100px;
         </div>
         <div class="column" id="proficiências" onchange="saveProficiências()">
             <h2>Proficiências</h2>
-            <p>Proficiências de Armadura<input type="text" id="input_proficiênciasArmadura" placeholder="Digite as proficiências aqui..."> </p>
-            <p>Proficiências de Arma <input type="text" id="input_proficiênciasArma" placeholder="Digite as proficiências aqui..."> </p>
-            <p>Ferramentas <input type="text" id="input_ferramentas" placeholder="Digite as ferramentas aqui..."> </p>
-            <p>Idiomas <input type="text" id="input_idiomasProficiências" placeholder="Digite os idiomas aqui..."> </p>
-            <p>Outras Proficiências <input type="text" id="input_outrosProficiências" placeholder="Digite outras proficiências aqui..."> </p>
+            <p> <input type="checkbox" id="boxProeArmadura" class="checkbox">Armaduras<input type="text" id="input_proeArmadura" placeholder="Digite os tipos de armaduras aqui..."></p>
+            <p> <input type="checkbox" id="boxProeArma" class="checkbox">Armas<input type="text" id="input_proeArma" placeholder="Digite os tipos de armas aqui..."></p>
+            <p> <input type="checkbox" id="boxProeFerramenta" class="checkbox">Ferramentas<input type="text" id="input_proeFerramentas" placeholder="Digite os tipos de ferramentas aqui..."></p>
+            <p> <input type="checkbox" id="boxProeIdioma" class="checkbox" > Idiomas<input type="text" id="input_proeIdiomas" placeholder="Digite os idiomas aqui..."></p>
+            <p>Outras Proficiências <textarea type="text" class="textarea" id="input_outrosProficiências" placeholder="Digite outras proficiências aqui..."></textarea> </p>
         </div>
         <button class="button" id="" onclick="alert('Ficha salva com sucesso!')">Salvar Ficha</button>
     </div> 
