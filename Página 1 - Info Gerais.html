@@ -4,96 +4,181 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ficha Dungeons & Dragons</title>
-    <style>
+    <!-- <link rel="stylesheet" href="style.css"> -->
+     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 20px;
-        }
-        h1, h2 {
-            color: #333;
-        }
-        p {
-            margin: 10px 0;
-        }
-        input[type="text"] {
-            width: 300px;
-            padding: 8px;
-            margin-left: 10px;
-            border-radius: 5px;
-            background-color: #dbdbdb;
-            border: 1px solid #909091;
-        }
-        input[type="number"] {
-            width: 100px;
-            padding: 8px;
-            margin-left: 10px;
-            border-radius: 5px;
-            background-color: #dbdbdb;
-            border: 1px solid #909091;
-        }
-        .conteiner {
-            margin-bottom: 20px;
-            padding-bottom: 30px;
-            padding-top: 30px;
-            padding-left: 30px;
-            background-color: #fff;
-            border-radius: 10px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
-        button {
-            padding: 10px 20px;
-            background-color: #007BFF;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            display: block;
-            margin-left: auto;
-            margin-right: 20px;
-        }
-        .column {
-            margin-bottom: 20px;
-            padding-bottom: 30px;
-            padding-top: 20px;
-            padding-left: 30px;
-            padding-right: 20px;
-            background-color: #d4d4d4;
-            border-radius: 10px;
-            width: 45%;
-            flex-direction: column;
-            align-items: right;
-            justify-content: center;
-            display: inline-block;
-            vertical-align: top;
-            height: 550px;
-        }
-        /* Estilo do Dropdown */
-        .dropdown {
-            padding: 8px;
-            border-radius: 5px;
-            width: 300px;
-            cursor: pointer;
-            margin-left: 10px;
-            background-color: #dbdbdb;
-            border: 1px solid #909091;
-        }
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+}
+h1, h2 {
+    color: #333;
+}
+p {
+    margin: 10px 0;
+}
+input[type="text"] {
+    width: 300px;
+    padding: 8px;
+    margin-left: 10px;
+    border-radius: 5px;
+    background-color: #dbdbdb;
+    border: 1px solid #909091;
+}
+input[type="number"] {
+    width: 100px;
+    padding: 8px;
+    margin-left: 10px;
+    border-radius: 5px;
+    background-color: #dbdbdb;
+    border: 1px solid #909091;
+}
+.conteiner {
+    margin-bottom: 20px;
+    padding-bottom: 30px;
+    padding-top: 30px;
+    padding-left: 30px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+button {
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: block;
+    margin-left: auto;
+    margin-right: 20px;
+}
+.column {
+    margin-bottom: 20px;
+    padding-bottom: 30px;
+    padding-top: 20px;
+    padding-left: 30px;
+    padding-right: 20px;
+    background-color: #d4d4d4;
+    border-radius: 10px;
+    width: 45%;
+    flex-direction: column;
+    align-items: right;
+    justify-content: center;
+    display: inline-block;
+    vertical-align: top;
+    height: 550px;
+}
+#habilidades {
+    margin-bottom: 20px;
+    padding-bottom: 30px;
+    padding-top: 20px;
+    padding-left: 30px;
+    padding-right: 20px;
+    background-color: #d4d4d4;
+    border-radius: 10px;
+    width: 45%;
+    flex-direction: column;
+    align-items: right;
+    justify-content: center;
+    display: inline-block;
+    vertical-align: top;
+    height: 1000px;
+}
+#historia {
+    margin-bottom: 20px;
+    padding-bottom: 30px;
+    padding-top: 20px;
+    padding-left: 30px;
+    padding-right: 20px;
+    background-color: #d4d4d4;
+    border-radius: 10px;
+    width: 45%;
+    flex-direction: column;
+    align-items: right;
+    justify-content: center;
+    display: inline-block;
+    vertical-align: top;
+    height: 1000px;
+}
+/* Estilo do Dropdown */
+.dropdown {
+    padding: 8px;
+    border-radius: 5px;
+    width: 300px;
+    cursor: pointer;
+    margin-left: 10px;
+    background-color: #dbdbdb;
+    border: 1px solid #909091;
+}
 
-        /* Efeito de Hover */
-        .dropdown:hover {
-            border-color: #7c7144; /* Dourado */
-        }
-        /* Estilo do Menu Aberto */
-        .dropdown:focus {
-            outline: none;
-            border-color: #7c7144; /* Dourado */
-        }
-        .dropdown option:hover {
-            background-color: #fff;
-            color: #333;
-        }
-    </style>    
+/* Efeito de Hover */
+.dropdown:hover {
+    border-color: #7c7144; /* Dourado */
+}
+/* Estilo do Menu Aberto */
+.dropdown:focus {
+    outline: none;
+    border-color: #7c7144; /* Dourado */
+}
+.dropdown option:hover {
+    background-color: #fff;
+    color: #333;
+}
+.modHab {
+    padding: 10px;
+    margin-left: 10px;
+    border-radius: 5px;
+    text-align: center;
+    display: inline-block;
+    cursor: pointer;
+    background-color: #cacaca;
+    border: 1px solid #909091; 
+}
+/*.autoIncrement { 
+    padding: 10px;
+    margin-left: 10px;
+    border-radius: 5px;
+    text-align: center;
+    display: inline-block;
+    cursor: pointer;
+    background-color: #cacaca;
+    border: 1px solid #909091; 
+}
+    */
+.textarea {
+    padding: 10px;
+    margin-left: 10px;
+    border-radius: 5px;
+    display: inline-block;
+    cursor: pointer;
+    background-color: #dbdbdb;
+    border: 1px solid #909091;
+    vertical-align: middle;
+    height: 100px;
+    width: 300px;
+}
+.nomeArma{
+    width: 300px;
+    padding: 8px;
+    margin-left: 100px;
+    border-radius: 5px;
+    background-color: #dbdbdb;
+    border: 1px solid #909091;
+}
+.danoArma{
+width: 100px;
+    padding: 8px;
+    margin-left: 10px;
+    border-radius: 5px;
+    background-color: #d17b7b;
+    border: 1px solid #909091;
+}
+.efeitoArma{
+
+}
+     </style>
 </head>
 <body>
    <div class="conteiner">
@@ -146,6 +231,7 @@
             <p>Experiência <input type="text" id="input_experiencia" placeholder="Digite a experiência aqui..." onchange="nivel()"> </p>
             <p id="ai_nivel" class="autoIncrement">Nível</p>
             <p id="ai_xpProximoNivel" class="autoIncrement">XP para o Próximo Nível </p>
+            <p>Inspiração <text class="modHab" id="ai_inspiracao"> 0 </text></p>
         </div>
         <button class="button" id="" onclick="alert('Ficha salva com sucesso!')">Salvar Ficha</button>
     </div>
@@ -184,33 +270,34 @@
     <div class="conteiner">      
         <div class="column" id="habilidades" onchange="saveHabilidades()">
             <h2>Habilidades</h2>
-            <p id="hab1">Acrobacia %trocar% </p>
-            <p>Arcanismo </p>
-            <p>Atletismo </p>
-            <p>Atuação </p>
-            <p>Enganação </p>
-            <p>Furtividade </p>
-            <p>História </p>
-            <p>Intimidação </p>
-            <p>Intuição </p>
-            <p>Investigação </p>
-            <p>Medicina </p>
-            <p>Natureza </p>
-            <p>Percepção </p>
-            <p>Persuasão </p>
-            <p>Religião </p>
-            <p>Sobrevivência </p>
-            <p>Furtividade </p>
-            <p>Percepção Passiva </p>
+            <p> <input type="checkbox" id="boxHabAcrobacia" class="checkbox" disabled >Acrobacia <i> (Destreza) </i> </checkbox> <text class="modHab" id="modDes"> + 0 </text> </p>
+            <p> <input type="checkbox" id="boxHabArcanismo" class="checkbox" disabled >Arcanismo </checkbox> <text class="modHab" id="modHab"> + 0 </text></p>
+            <p> <input type="checkbox" id="boxHabAtletismo" class="checkbox" disabled >Atletismo </checkbox> <text class="modHab" id="modHab"> + 0 </text></p>
+            <p> <input type="checkbox" id="boxHabAtuacao" class="checkbox" disabled >Atuação </checkbox> <text class="modHab" id="modHab"> + 0 </text></p>
+            <p> <input type="checkbox" id="boxHabEnganacao" class="checkbox" disabled >Enganação </checkbox> <text class="modHab" id="modHab"> + 0 </text></p>
+            <p> <input type="checkbox" id="boxHabFurtividade" class="checkbox" disabled >Furtividade </checkbox> <text class="modHab" id="modHab"> + 0 </text></p>
+            <p> <input type="checkbox" id="boxHabHistoria" class="checkbox" disabled >História </checkbox> <text class="modHab" id="modHab"> + 0 </text></p>
+            <p> <input type="checkbox" id="boxHabIntimidacao" class="checkbox" disabled >Intimidação <text class="modHab" id="modHab"> + 0 </text></checkbox> </p>
+            <p> <input type="checkbox" id="boxHabIntuicao" class="checkbox" disabled >Intuição </checkbox> <text class="modHab" id="modHab"> + 0 </text></p>
+            <p> <input type="checkbox" id="boxHabInvestigacao" class="checkbox" disabled >Investigação </checkbox> <text class="modHab" id="modHab"> + 0 </text></p>
+            <p> <input type="checkbox" id="boxHabMedicina" class="checkbox" disabled >Medicina </checkbox> <text class="modHab" id="modHab"> + 0 </text></p>
+            <p> <input type="checkbox" id="boxHabNatureza" class="checkbox" disabled >Natureza </checkbox> <text class="modHab" id="modHab"> + 0 </text></p>
+            <p> <input type="checkbox" id="boxHabPercepcao" class="checkbox" disabled >Percepção </checkbox> <text class="modHab" id="modHab"> + 0 </text></p>
+            <p> <input type="checkbox" id="boxHabPersuasao" class="checkbox" disabled >Persuasão </checkbox> <text class="modHab" id="modHab"> + 0 </text></p>
+            <p> <input type="checkbox" id="boxHabReligiao" class="checkbox" disabled >Religião </checkbox> <text class="modHab" id="modHab"> + 0 </text></p>
+            <p> <input type="checkbox" id="boxHabSobrevivencia" class="checkbox" disabled >Sobrevivência </checkbox> <text class="modHab" id="modHab"> + 0 </text></p>
+            <p> <input type="checkbox" id="boxHabFurtividade" class="checkbox" disabled >Furtividade </checkbox> <text class="modHab" id="modHab"> + 0 </text></p>
+            <p> <input type="checkbox" id="boxHabPercepcaoPassiva" class="checkbox" disabled >Percepção Passiva </checkbox> <text class="modHab" id="modHab"> + 0 </text></p>
+            <p> <input type="checkbox" id="boxHabDesarmarArmadilhas" class="checkbox" disabled >Desarmar Armadilhas </checkbox> <text class="modHab" id="modHab"> + 0 </text></p>
         </div>
         <div class="column" id="salvaguardas" onchange="saveSalvaguardas()">
             <h2>Salvaguardas</h2>
-            <p>Força <input type="text" id="input_forcaSalvaguarda" placeholder="Digite a força aqui..."> </p>
-            <p>Destreza <input type="text" id="input_destrezaSalvaguarda" placeholder="Digite a destreza aqui..."> </p>
-            <p>Constituição <input type="text" id="input_constituicaoSalvaguarda" placeholder="Digite a constituição aqui..."> </p>
-            <p>Inteligência <input type="text" id="input_inteligenciaSalvaguarda" placeholder="Digite a inteligência aqui..."> </p>
-            <p>Sabedoria <input type="text" id="input_sabedoriaSalvaguarda" placeholder="Digite a sabedoria aqui..."> </p>
-            <p>Carisma <input type="text" id="input_carismaSalvaguarda" placeholder="Digite o carisma aqui..."> </p>
+            <p> <input type="checkbox" id="boxSalvForca" class="checkbox" disabled > Força <text class="modHab" id="ai_forcaSalvaguarda"> + 0 </text></p>
+            <p> <input type="checkbox" id="boxSalvDestreza" class="checkbox" disabled > Destreza <text class="modHab" id="ai_destrezaSalvaguarda"> + 0 </text></p>
+            <p> <input type="checkbox" id="boxSalvConstituicao" class="checkbox" disabled > Constituição <text class="modHab" id="ai_constituicaoSalvaguarda"> + 0 </text> </p>
+            <p> <input type="checkbox" id="boxSalvInteligencia" class="checkbox" disabled > Inteligência <text class="modHab" id="ai_inteligenciaSalvaguarda"> + 0 </text> </p>
+            <p> <input type="checkbox" id="boxSalvSabedoria" class="checkbox" disabled > Sabedoria <text class="modHab" id="ai_sabedoriaSalvaguarda"> + 0 </text></p>
+            <p> <input type="checkbox" id="boxSalCarisma" class="checkbox" disabled >Carisma <text class="modHab" id="ai_carismaSalvaguarda"> + 0 </text></p>
         </div>
         <button class="button" id="" onclick="alert('Ficha salva com sucesso!')">Salvar Ficha</button>
     </div>    
@@ -228,7 +315,7 @@
         <div class="column" id="equipamentos" onchange="saveEquipamentos()">
             <h2>Equipamentos</h2>
             <p>Armadura <select class="dropdown" id="input_armadura">
-                <option value="">Selecione o tipo de armadura</option>
+                <option value="">Sem Armadura</option>
                 <option value="acolchoada">Acolchoada</option>
                 <option value="couro">Couro</option>
                 <option value="couroBatido">Couro Batido</option>
@@ -246,13 +333,14 @@
             </select>
             </p>
             <p>Escudo <select class="dropdown" id="input_escudo">
+                <option value="">Sem escudo</option>
                 <option value="escudoleve">Escudo Leve</option>
                 <option value="escudopesado">Escudo Pesado</option>
                 <option value="escudoDeCorpo">Escudo de Corpo </option>
-                <option value="true">Sim</option>
+               
             </select></p>
-            <p>Arma Primária <input type="text" id="input_armaPrimaria" placeholder="Digite a arma primária aqui..."> </p>
-            <p>Arma Secundária <input type="text" id="input_armaSecundaria" placeholder="Digite a arma secundária aqui..."> </p>
+            <p>Arma Primária <input type="text" id="input_armaPrimaria" class="nomeArma" placeholder="Digite a arma primária aqui..."><input type="text" class="danoArma" id="danoArmaPrimaria" placeholder="Dano..."> <input type="text" class="efeitoArma" id="efeitoArmaPrimaria" placeholder="Efeito..."></p>
+            <p>Arma Secundária <input type="text" class="nomeArma" id="input_armaSecundaria" placeholder="Digite a arma secundária aqui..."><input type="text" class="danoArma" id="danoArmaSecundaria" placeholder="Dano..."> <input type="text" class="efeitoArma" id="efeitoArmaSecundaria" placeholder="Efeito..."></p> </p>
             <p>Itens Mágicos <input type="text" id="input_itensMagicos" placeholder="Digite os itens mágicos aqui..."> </p>
             <p>Outros Itens <input type="text" id="input_outrosItens" placeholder="Digite outros itens aqui..."> </p>   
             <p>Dinheiro <input type="text" id="input_dinheiro" placeholder="Digite o dinheiro aqui..."> </p>
@@ -266,13 +354,12 @@
     <div class="conteiner">      
         <div class="column" id="historia" onchange="saveHistoria()">
             <h2>História</h2>
-            <p>História do Personagem <input type="text" id="input_historiaPersonagem" placeholder="Digite a história do personagem aqui..."> </p>
-            <p>Motivação <input type="text" id="input_motivacao" placeholder="Digite a motivação aqui..."> </p>
-            <p>Ideais <input type="text" id="input_ideais" placeholder="Digite os ideais aqui..."> </p>
-            <p>Vínculos <input type="text" id="input_vinculos" placeholder="Digite os vínculos aqui..."> </p>
-            <p>Defeitos <input type="text" id="input_defeitos" placeholder="Digite os defeitos aqui..."> </p>
-            <p>Notas <input type="text" id="input_notas" placeholder="Digite as notas aqui..."> </p>
-            <p>Inspiração <input type="text" id="input_inspiracao" placeholder="Digite a inspiração aqui..."> </p>
+            <p>História do Personagem <textarea type="text" class="textarea"  id="input_historiaPersonagem" placeholder="Digite a história do personagem aqui..."></textarea> </p>
+            <p>Motivação <textarea type="text" class="textarea" id="input_motivacao" placeholder="Digite a motivação aqui..."></textarea> </p>
+            <p>Ideais <textarea type="text" class="textarea" id="input_ideais" placeholder="Digite os ideais aqui..."></textarea></p>
+            <p>Vínculos <textarea type="text" class="textarea" id="input_vinculos" placeholder="Digite os vínculos aqui..."></textarea> </p>
+            <p>Defeitos <textarea type="text" class="textarea" id="input_defeitos" placeholder="Digite os defeitos aqui..."></textarea> </p>
+            <p>Notas <textarea type="text" class="textarea" id="input_notas" placeholder="Digite as notas aqui..."></textarea> </p>
         </div>
         <div class="column" id="proficiências" onchange="saveProficiências()">
             <h2>Proficiências</h2>
@@ -461,14 +548,22 @@
         }
         
         if (sobrecarga)
-            deslocamento = deslocamento - 3; // Reduzir 1.5 metros se sobrecarregado
+            deslocamento = deslocamento - 3; // Reduzir 3 metros se sobrecarregado
         if (grandeSobrecarga)
-            deslocamento = deslocamento - 6; // Reduzir 3 metros se grande sobrecarregado
+            deslocamento = deslocamento - 6; // Reduzir 6 metros se grande sobrecarregado
 
-        document.getElementById('ai_deslocamento').innerHTML = "Deslocamento: " + deslocamento + " metros";
-
-       
+        document.getElementById('ai_deslocamento').innerHTML = "Deslocamento: " + deslocamento + " metros";   
         
+    }
+    function Salvaguardas(){
+        let proForca = document.getElementById('boxSalvForca').value
+        if (proForca){
+            let salvaForca = modFor + proForca 
+        } else {
+            let salvaForca = modFor
+        }
+        document.getElementById
+
     }
 </script>
 </body>
