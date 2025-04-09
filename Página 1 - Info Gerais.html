@@ -178,6 +178,64 @@ width: 100px;
 .efeitoArma{
 
 }
+#armas{
+    margin-bottom: 20px;
+    padding-bottom: 30px;
+    padding-top: 20px;
+    padding-left: 30px;
+    padding-right: 20px;
+    background-color: #d4d4d4;
+    border-radius: 10px;
+    width: 30%;
+    flex-direction: column;
+    align-items: right;
+    justify-content: center;
+    display: inline-block;
+    vertical-align: top;
+    height: auto;
+
+}
+.ataque{
+    margin-bottom: 20px;
+    padding-bottom: 30px;
+    padding-top: 20px;
+    padding-left: 30px;
+    padding-right: 20px;
+    background-color: #d4d4d4;
+    border-radius: 10px;
+    border: 1px solid #909091;
+    width: 45%;
+    flex-direction: column;
+    align-items: right;
+    justify-content: center;
+    display: inline-block;
+    vertical-align: top;
+    height: auto;
+}
+#input_nomeAtaque1, #input_nomeAtaque2, #input_nomeAtaque3, #input_danoAtaque1, #input_danoAtaque2, #input_danoAtaque3, #input_tipoDanoataque1, #input_tipoDanoataque2, #input_tipoDanoataque3{
+    width: 150px;
+    padding: 8px;
+    margin-left: 10px;
+    border-radius: 5px;
+    background-color: #dbdbdb;
+    border: 1px solid #909091;
+}
+#ataques, #equipamentos{
+    margin-bottom: 20px;
+    padding-bottom: 30px;
+    padding-top: 20px;
+    padding-left: 30px;
+    padding-right: 20px;
+    background-color: #d4d4d4;
+    border-radius: 10px;
+    width: 45%;
+    flex-direction: column;
+    align-items: right;
+    justify-content: center;
+    display: inline-block;
+    vertical-align: top;
+    height: auto;
+}
      </style>
 </head>
 <body>
@@ -232,6 +290,16 @@ width: 100px;
             <p id="ai_nivel" class="autoIncrement">Nível</p>
             <p id="ai_xpProximoNivel" class="autoIncrement">XP para o Próximo Nível </p>
             <p>Inspiração <text class="modHab" id="ai_inspiracao"> 0 </text></p>
+            <p>Dado de Vida <text class="modHab" id="ai_dadoVida"> d0 </text></p>
+            <div>
+                <p> <strong>Salvaguarda de Morte</strong> </p>
+                <p>Sucessos <input type="checkbox" id="boxSucessoMorte1" class="checkbox" >
+                <input type="checkbox" id="boxSucessoMorte2" class="checkbox" >
+                <input type="checkbox" id="boxSucessoMorte3" class="checkbox" ></p>
+                <p>Falhas <input type="checkbox" id="boxFalhaMorte1" class="checkbox" >
+                    <input type="checkbox" id="boxFalhaMorte2" class="checkbox" >
+                    <input type="checkbox" id="boxFalhaMorte3" class="checkbox" ></p>
+            </div>
         </div>
         <button class="button" id="" onclick="alert('Ficha salva com sucesso!')">Salvar Ficha</button>
     </div>
@@ -305,12 +373,72 @@ width: 100px;
     <div class="conteiner">      
         <div class="column" id="ataques"    onchange="saveAtaques()">
             <h2>Ataques</h2>
-            <p>Ataque Corpo a Corpo <input type="text" id="input_ataqueCorpoACorpo" placeholder="Digite o ataque corpo a corpo aqui..."> </p>
-            <p>Ataque à Distância <input type="text" id="input_ataqueADistancia" placeholder="Digite o ataque à distância aqui..."> </p>
-            <p>Outros Ataques <input type="text" id="input_outrosAtaques" placeholder="Digite outros ataques aqui..."> </p>
-            <p>Outros Efeitos <input type="text" id="input_outrosEfeitos" placeholder="Digite outros efeitos aqui..."> </p>
-            <p>Outras Ações <input type="text" id="input_outrosAcoes" placeholder="Digite outras ações aqui..."> </p>
-            <p>Outras Reações <input type="text" id="input_outrosReacoes" placeholder="Digite outras reações aqui..."> </p>
+            <div id="ataque1" class="ataque">
+                <p>Ataque 1</p>
+                <p><label for="input_nomeAtaque1">Nome:</label> <input type="text" id="input_nomeAtaque1" placeholder="Nome do ataque..."></p> 
+                <p><label for="input_danoAtaque1">Dano:</label> <input type="text" id="input_danoAtaque1" placeholder="Dano do ataque..."></p> 
+                <p> Tipo: <select class="dropdown" id="input_tipoDanoataque1" >
+                    <option value="">Tipo de dano...</option>
+                    <option value="acido">Ácido</option>
+                    <option value="contundente">Contundente</option>
+                    <option value="cortante">Cortante</option>
+                    <option value="eletrico">Elétrico</option>
+                    <option value="energetico">Energético</option>
+                    <option value="gelido">Gélido</option>
+                    <option value="igneo">Ígneo</option>
+                    <option value="necrotico">Necrótico</option>
+                    <option value="perfurante">Perfurante</option>
+                    <option value="psiquico">Psíquico</option>
+                    <option value="radiante">Radiante</option>
+                    <option value="trovejante">Trovejante</option>
+                    <option value="venenoso">Venenoso</option>
+                </select></p>
+            </div>
+            <div id="ataque2" class="ataque">
+                <p>Ataque 2</p>
+                <p><label for="input_nomeAtaque2">Nome:</label> <input type="text" id="input_nomeAtaque2" placeholder="Nome do ataque..."></p> 
+                <p><label for="input_danoAtaque2">Dano:</label> <input type="text" id="input_danoAtaque2" placeholder="Dano do ataque..."></p> 
+                <p> Tipo: <select class="dropdown" id="input_tipoDanoataque2" >
+                    <option value="">Tipo de dano...</option>
+                    <option value="acido">Ácido</option>
+                    <option value="contundente">Contundente</option>
+                    <option value="cortante">Cortante</option>
+                    <option value="eletrico">Elétrico</option>
+                    <option value="energetico">Energético</option>
+                    <option value="gelido">Gélido</option>
+                    <option value="igneo">Ígneo</option>
+                    <option value="necrotico">Necrótico</option>
+                    <option value="perfurante">Perfurante</option>
+                    <option value="psiquico">Psíquico</option>
+                    <option value="radiante">Radiante</option>
+                    <option value="trovejante">Trovejante</option>
+                    <option value="venenoso">Venenoso</option>
+                </select></p>
+            </div>
+            <div id="ataque3" class="ataque">
+                <p>Ataque 3</p>
+                <p><label for="input_nomeAtaque3">Nome:</label> <input type="text" id="input_nomeAtaque3" placeholder="Nome do ataque..."></p> 
+                <p><label for="input_danoAtaque3">Dano:</label> <input type="text" id="input_danoAtaque3" placeholder="Dano do ataque..."></p> 
+                <p> Tipo: <select class="dropdown" id="input_tipoDanoataque3" >
+                    <option value="">Tipo de dano...</option>
+                    <option value="acido">Ácido</option>
+                    <option value="contundente">Contundente</option>
+                    <option value="cortante">Cortante</option>
+                    <option value="eletrico">Elétrico</option>
+                    <option value="energetico">Energético</option>
+                    <option value="gelido">Gélido</option>
+                    <option value="igneo">Ígneo</option>
+                    <option value="necrotico">Necrótico</option>
+                    <option value="perfurante">Perfurante</option>
+                    <option value="psiquico">Psíquico</option>
+                    <option value="radiante">Radiante</option>
+                    <option value="trovejante">Trovejante</option>
+                    <option value="venenoso">Venenoso</option>
+                </select></p>
+            </div>
+            <p>Outros Ataques <textarea type="text"class="textarea" id="input_outrosAtaques" placeholder="Digite outros ataques aqui..."></textarea> </p>
+            <p>Outras Ações <textarea type="text" class="textarea" id="input_outrosAcoes" placeholder="Digite outras ações aqui..."> </textarea> </p>
+            <p>Outras Reações <textarea type="text" class="textarea" id="input_outrosReacoes" placeholder="Digite outras reações aqui..."></textarea> </p>
         </div>
         <div class="column" id="equipamentos" onchange="saveEquipamentos()">
             <h2>Equipamentos</h2>
@@ -339,14 +467,18 @@ width: 100px;
                 <option value="escudoDeCorpo">Escudo de Corpo </option>
                
             </select></p>
-            <p>Arma Primária <input type="text" id="input_armaPrimaria" class="nomeArma" placeholder="Digite a arma primária aqui..."><input type="text" class="danoArma" id="danoArmaPrimaria" placeholder="Dano..."> <input type="text" class="efeitoArma" id="efeitoArmaPrimaria" placeholder="Efeito..."></p>
-            <p>Arma Secundária <input type="text" class="nomeArma" id="input_armaSecundaria" placeholder="Digite a arma secundária aqui..."><input type="text" class="danoArma" id="danoArmaSecundaria" placeholder="Dano..."> <input type="text" class="efeitoArma" id="efeitoArmaSecundaria" placeholder="Efeito..."></p> </p>
+            <div id="armas">
+                <p>Arma Primária </p>
+                <input type="text" id="input_armaPrimaria" class="nomeArma" placeholder="Digite a arma primária aqui..."><input type="text" class="danoArma" id="danoArmaPrimaria" placeholder="Dano..."> <input type="text" class="efeitoArma" id="efeitoArmaPrimaria" placeholder="Efeito...">
+                <p>Arma Secundária</p>
+                <input type="text" class="nomeArma" id="input_armaSecundaria" placeholder="Digite a arma secundária aqui..."><input type="text" class="danoArma" id="danoArmaSecundaria" placeholder="Dano..."> <input type="text" class="efeitoArma" id="efeitoArmaSecundaria" placeholder="Efeito...">
+            </div>    
             <p>Itens Mágicos <input type="text" id="input_itensMagicos" placeholder="Digite os itens mágicos aqui..."> </p>
-            <p>Outros Itens <input type="text" id="input_outrosItens" placeholder="Digite outros itens aqui..."> </p>   
-            <p>Dinheiro <input type="text" id="input_dinheiro" placeholder="Digite o dinheiro aqui..."> </p>
-            <p>Moeda de Ouro <input type="text" id="input_moedaOuro" placeholder="Digite a moeda de ouro aqui..."> </p> 
-            <p>Moeda de Prata <input type="text" id="input_moedaPrata" placeholder="Digite a moeda de prata aqui..."> </p>
-            <p>Moeda de Cobre <input type="text" id="input_moedaCobre" placeholder="Digite a moeda de cobre aqui..."> </p>
+            <p>Outros Itens <input type="text" id="input_outrosItens" placeholder="Digite outros itens aqui..."> </p>
+            <p>Dinheiro </p>
+            <p><label for="input_moedaOuro">Moedas de Ouro:</label> <input type="number" id="input_moedaOuro" placeholder="0"></p> 
+            <p><label for="input_moedaPrata">Moedas de Prata:</label> <input type="number" id="input_moedaPrata" placeholder="0"></p>
+            <p><label for="input_moedaCobre">Moedas de Cobre:</label> <input type="number" id="input_moedaCobre" placeholder="0"></p>
         </div>
         <button class="button" id="" onclick="alert('Ficha salva com sucesso!')">Salvar Ficha</button>
     </div> 
