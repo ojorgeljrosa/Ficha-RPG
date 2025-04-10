@@ -134,7 +134,7 @@ button {
     justify-content: center;
     display: inline-block;
     vertical-align: top;
-    height: 550px;
+    height: auto;
 }
 #habilidades,
 #historia {
@@ -151,7 +151,7 @@ button {
     justify-content: center;
     display: inline-block;
     vertical-align: top;
-    height: 1000px;
+    height: auto;
 }
 #ataques,
 #equipamentos {

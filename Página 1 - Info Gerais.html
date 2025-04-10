@@ -7,13 +7,13 @@
     <link rel="stylesheet" id="style" href="style_ noturno.css">
 
 </head>
-<body>
+<body onchange="saveEquipamentos()" onchange="saveHistoria()" onchange="saveProficiências()" onchange="saveAtributos()" onchange="saveAtributosCombate()" onchange="saveHabilidades()" onchange="saveSalvaguardas()" onchange="saveAtaques()" onchange="saveInformacoesBasicas()">
     <p>Modo Noturno<input type="checkbox" id="boxNoturno" class="checkbox" onchange="modoNoturno()"></p>
     
     <div class="conteiner">
     
     <h1>Ficha Dungeons & Dragons</h1>    
-        <div class="column" id="informacoesBasicas" onchange="saveInformacoesBasicas()">
+        <div class="column" id="informacoesBasicas">
             <h2>Informações Básicas</h2>
             <p>Nome do Personagem <input type="text" class="inputTextoLongo" id="input_nomePersonagem" placeholder="Digite o nome aqui..."> </p>
             <p>Raça <select id="input_raca" name="raca" class="dropdown">
@@ -29,9 +29,10 @@
                 <option value="gnomo">Gnomo</option>
                 <option value="feral">Feral</option>
             </select>
-            <p>Classe <select id="input_classe" name="classe" class="dropdown">
+            <p>Classe <select id="input_classe" name="classe" class="dropdown" onchange="saveAtributosCombate()" onchange="classe()">
                 <option value="">Selecione uma classe</option>
                 <option value="guerreiro">Guerreiro</option>
+                <option value="barbaro">Bárbaro</option>
                 <option value="mago">Mago</option>
                 <option value="ladino">Ladino</option>
                 <option value="clerigo">Clérigo</option>
@@ -56,12 +57,13 @@
                 <option value="leal-mau">Leal e Mau</option>
                 <option value="neutro-mau">Neutro e Mau</option>
                 <option value="caotico-mau">Caótico e Mau</option>
-            </select> 
+            </select>
+            <p>Peso <input type="number" id="input_pesoPersonagem" placeholder="0 Kg"> </p>
             <p>Nome do Jogador <input type="text" class="inputTextoLongo" id="input_nomeJogador" placeholder="Digite o nome do jogador aqui..."> </p>
             <p>Experiência <input type="number" id="input_experiencia" placeholder="Digite a experiência aqui..." onchange="nivel()"> </p>
             <p>Nível <text id="ai_nivel" class="autoIncrement">0</text></p>
             <p>XP para o Próximo Nível <text id="ai_xpProximoNivel" class="autoIncrement">0</text></p>
-            <p>Inspiração <text class="autoIncrement" id="ai_inspiracao"> 0 </text></p>
+            <p>Inspiração <input type="number" id="ai_inspiracao" placeholder="0"></p>
             <p>Dado de Vida <text class="autoIncrement" id="ai_dadoVida"> d0 </text></p>
             <div>
                 <p> <strong>Salvaguarda de Morte</strong> </p>
@@ -95,41 +97,40 @@
             <p>Iniciativa<text id="ai_iniciativa" class="autoIncrement">0</text></p>
             <p>Deslocamento<text id="ai_deslocamento" class="autoIncrement">0</text></p>
             <p>Bonus de Proficiência<text id="ai_proeficiencia" class="autoIncrement">0</text></p>
-            <p>Sabedoria Passiva<text id="ai_sabPassiva" class="autoIncrement">0</text></p>
+            <p>Percepção Passiva<text id="ai_sabPassiva" class="autoIncrement">0</text></p>
         </div>
         <button class="button" id="" onclick="alert('Ficha salva com sucesso!')">Salvar Ficha</button>
     </div>
     
     <div class="conteiner">      
-        <div class="column" id="habilidades" onchange="saveHabilidades()">
+        <div class="column" id="habilidades" onchange="saveHabilidades()" onchange="saveAtributos()">
             <h2>Habilidades</h2>
-            <p> <input type="checkbox" id="boxHabAcrobacia" class="checkbox" >Acrobacia <i> (Destreza) </i> </checkbox> <text class="autoIncrement" id="modDes"> + 0 </text> </p>
-            <p> <input type="checkbox" id="boxHabArcanismo" class="checkbox" >Arcanismo <i> (Inteligência) </i></checkbox> <text class="autoIncrement" id="modInt"> + 0 </text></p>
-            <p> <input type="checkbox" id="boxHabAtletismo" class="checkbox" >Atletismo <i> (Força) </i></checkbox> <text class="autoIncrement" id="modFor"> + 0 </text></p>
-            <p> <input type="checkbox" id="boxHabAtuacao" class="checkbox" >Atuação <i> (Carisma) </i></checkbox> <text class="autoIncrement" id="modCar"> + 0 </text></p>
-            <p> <input type="checkbox" id="boxHabEnganacao" class="checkbox" >Enganar/Blefar <i> (Carisma) </i></checkbox> <text class="autoIncrement" id="modCar"> + 0 </text></p>
-            <p> <input type="checkbox" id="boxHabAcrobacia" class="checkbox" >Lidar com Animais <i> (Sabedoria) </i> </checkbox> <text class="autoIncrement" id="modSab"> + 0 </text> </p>
-            <p> <input type="checkbox" id="boxHabFurtividade" class="checkbox" >Furtividade <i> (Destreza) </i></checkbox> <text class="autoIncrement" id="modDes"> + 0 </text></p>
-            <p> <input type="checkbox" id="boxHabHistoria" class="checkbox" >História <i> (Inteligência) </i></checkbox> <text class="autoIncrement" id="modInt"> + 0 </text></p>
-            <p> <input type="checkbox" id="boxHabIntimidacao" class="checkbox" >Intimidação <i> (Carisma) </i><text class="autoIncrement" id="modCar"> + 0 </text></checkbox> </p>
-            <p> <input type="checkbox" id="boxHabIntuicao" class="checkbox" >Intuição <i> (Sabedoria) </i></checkbox> <text class="autoIncrement" id="modSab"> + 0 </text></p>
-            <p> <input type="checkbox" id="boxHabInvestigacao" class="checkbox" >Investigação <i> (inteligência) </i></checkbox> <text class="autoIncrement" id="modInt"> + 0 </text></p>
-            <p> <input type="checkbox" id="boxHabMedicina" class="checkbox" >Medicina <i> (Sabedoria) </i></checkbox> <text class="autoIncrement" id="modSab"> + 0 </text></p>
-            <p> <input type="checkbox" id="boxHabNatureza" class="checkbox" >Natureza <i> (Inteligência) </i></checkbox> <text class="autoIncrement" id="modInt"> + 0 </text></p>
-            <p> <input type="checkbox" id="boxHabPercepcao" class="checkbox" >Percepção <i> (Sabedoria) </i></checkbox> <text class="autoIncrement" id="modSab"> + 0 </text></p>
-            <p> <input type="checkbox" id="boxHabPersuasao" class="checkbox" >Persuasão <i> (Carisma) </i></checkbox> <text class="autoIncrement" id="modCar"> + 0 </text></p>
-            <p> <input type="checkbox" id="boxHabReligiao" class="checkbox" >Religião <i> (Inteligência) </i></checkbox> <text class="autoIncrement" id="modInt"> + 0 </text></p>
-            <p> <input type="checkbox" id="boxHabSobrevivencia" class="checkbox" >Sobrevivência <i> (Sabedoria) </i></checkbox> <text class="autoIncrement" id="modSab"> + 0 </text></p>
-            <p> <input type="checkbox" id="boxHabFurtividade" class="checkbox" >Furtividade <i> (Destreza) </i></checkbox> <text class="autoIncrement" id="modDes"> + 0 </text></p>
+            <p> <input type="checkbox" id="boxHabAcrobacia" class="checkbox" onchange="saveAtributos()" >Acrobacia <i> (Destreza) </i> </checkbox> <text class="autoIncrement habDes" id="ai_habAcrobacia"> + 0 </text> </p>
+            <p> <input type="checkbox" id="boxHabArcanismo" class="checkbox" onchange="saveAtributos()">Arcanismo <i> (Inteligência) </i></checkbox> <text class="autoIncrement habInt" id="ai_habArcanismo"> + 0 </text> </p>
+            <p> <input type="checkbox" id="boxHabAtletismo" class="checkbox" onchange="saveAtributos()">Atletismo <i> (Força) </i></checkbox> <text class="autoIncrement habFor" id="ai_habAtletismo"> + 0 </text> </p>
+            <p> <input type="checkbox" id="boxHabAtuacao" class="checkbox" onchange="saveAtributos()">Atuação <i> (Carisma) </i></checkbox> <text class="autoIncrement habCar" id="ai_habAtuacao"> + 0 </text> </p>
+            <p> <input type="checkbox" id="boxHabEnganacao" class="checkbox" onchange="saveAtributos()">Enganar/Blefar <i> (Carisma) </i></checkbox> <text class="autoIncrement habCar" id="ai_habEnganacao"> + 0 </text></p>
+            <p> <input type="checkbox" id="boxHabLidarAnimais" class="checkbox" onchange="saveAtributos()">Lidar com Animais <i> (Sabedoria) </i> </checkbox> <text class="autoIncrement habSab" id="ai_habLidarAnimais"> + 0 </text> </p>
+            <p> <input type="checkbox" id="boxHabFurtividade" class="checkbox" onchange="saveAtributos()">Furtividade <i> (Destreza) </i></checkbox> <text class="autoIncrement habDes" id="ai_habFurtividade"> + 0 </text></p>
+            <p> <input type="checkbox" id="boxHabHistoria" class="checkbox" onchange="saveAtributos()">História <i> (Inteligência) </i></checkbox> <text class="autoIncrement habInt" id="ai_habHistoria"> + 0 </text></p>
+            <p> <input type="checkbox" id="boxHabIntimidacao" class="checkbox" onchange="saveAtributos()">Intimidação <i> (Carisma) </i><text class="autoIncrement habCar" id="ai_habIntimidacao"> + 0 </text></checkbox> </p>
+            <p> <input type="checkbox" id="boxHabIntuicao" class="checkbox" onchange="saveAtributos()">Intuição <i> (Sabedoria) </i></checkbox> <text class="autoIncrement habSab" id="ai_habIntuicao"> + 0 </text></p>
+            <p> <input type="checkbox" id="boxHabInvestigacao" class="checkbox" onchange="saveAtributos()">Investigação <i> (inteligência) </i></checkbox> <text class="autoIncrement habInt" id="ai_habInvestigacao"> + 0 </text></p>
+            <p> <input type="checkbox" id="boxHabMedicina" class="checkbox" onchange="saveAtributos()">Medicina <i> (Sabedoria) </i></checkbox> <text class="autoIncrement habSab" id="ai_habMedicina"> + 0 </text></p>
+            <p> <input type="checkbox" id="boxHabNatureza" class="checkbox" onchange="saveAtributos()">Natureza <i> (Inteligência) </i></checkbox> <text class="autoIncrement habInt" id="ai_habNatureza"> + 0 </text></p>
+            <p> <input type="checkbox" id="boxHabPercepcao" class="checkbox" onchange="saveAtributos()">Percepção <i> (Sabedoria) </i></checkbox> <text class="autoIncrement habSab" id="ai_habPercepcao"> + 0 </text></p>
+            <p> <input type="checkbox" id="boxHabPersuasao" class="checkbox" onchange="saveAtributos()">Persuasão <i> (Carisma) </i></checkbox> <text class="autoIncrement habCar" id="ai_habPersuasao"> + 0 </text></p>
+            <p> <input type="checkbox" id="boxHabReligiao" class="checkbox" onchange="saveAtributos()">Religião <i> (Inteligência) </i></checkbox> <text class="autoIncrement habInt" id="ai_habReligiao"> + 0 </text></p>
+            <p> <input type="checkbox" id="boxHabSobrevivencia" class="checkbox" onchange="saveAtributos()">Sobrevivência <i> (Sabedoria) </i></checkbox> <text class="autoIncrement habSab" id="ai_habSobrevivencia"> + 0 </text></p>
         </div>
         <div class="column" id="salvaguardas" onchange="saveSalvaguardas()">
             <h2>Salvaguardas</h2>
-            <p> <input type="checkbox" id="boxSalvForca" class="checkbox" > Força <text class="autoIncrement" id="ai_forcaSalvaguarda"> + 0 </text></p>
-            <p> <input type="checkbox" id="boxSalvDestreza" class="checkbox" > Destreza <text class="autoIncrement" id="ai_destrezaSalvaguarda"> + 0 </text></p>
-            <p> <input type="checkbox" id="boxSalvConstituicao" class="checkbox" > Constituição <text class="autoIncrement" id="ai_constituicaoSalvaguarda"> + 0 </text> </p>
-            <p> <input type="checkbox" id="boxSalvInteligencia" class="checkbox" > Inteligência <text class="autoIncrement" id="ai_inteligenciaSalvaguarda"> + 0 </text> </p>
-            <p> <input type="checkbox" id="boxSalvSabedoria" class="checkbox" > Sabedoria <text class="autoIncrement" id="ai_sabedoriaSalvaguarda"> + 0 </text></p>
-            <p> <input type="checkbox" id="boxSalCarisma" class="checkbox" >Carisma <text class="autoIncrement" id="ai_carismaSalvaguarda"> + 0 </text></p>
+            <p> <input type="checkbox" id="boxSalvaForca" class="checkbox" onchange="saveAtributos()"> Força <text class="autoIncrement habFor" id="ai_forcaSalvaguarda"> + 0 </text></p>
+            <p> <input type="checkbox" id="boxSalvaDestreza" class="checkbox" onchange="saveAtributos()"> Destreza <text class="autoIncrement habDes" id="ai_destrezaSalvaguarda"> + 0 </text></p>
+            <p> <input type="checkbox" id="boxSalvaConstituicao" class="checkbox" onchange="saveAtributos()"> Constituição <text class="autoIncrement habCons" id="ai_constituicaoSalvaguarda"> + 0 </text> </p>
+            <p> <input type="checkbox" id="boxSalvaInteligencia" class="checkbox" onchange="saveAtributos()"> Inteligência <text class="autoIncrement habInt" id="ai_inteligenciaSalvaguarda"> + 0 </text> </p>
+            <p> <input type="checkbox" id="boxSalvaSabedoria" class="checkbox" onchange="saveAtributos()"> Sabedoria <text class="autoIncrement habSab" id="ai_sabedoriaSalvaguarda"> + 0 </text></p>
+            <p> <input type="checkbox" id="boxSalvaCarisma" class="checkbox" onchange="saveAtributos()">Carisma <text class="autoIncrement habCar" id="ai_carismaSalvaguarda"> + 0 </text></p>
         </div>
         <button class="button" id="" onclick="alert('Ficha salva com sucesso!')">Salvar Ficha</button>
     </div>    
@@ -206,7 +207,7 @@
         </div>
         <div class="column" id="equipamentos" onchange="saveEquipamentos()">
             <h2>Equipamentos</h2>
-            <p>Armadura <select class="dropdown" id="input_armadura">
+            <p>Armadura <select class="dropdown" id="input_armadura" onchange="saveAtributos()">
                 <option value="">Sem Armadura</option>
                 <option value="acolchoada">Acolchoada</option>
                 <option value="couro">Couro</option>
@@ -217,20 +218,18 @@
                 <option value="cotaDeEscamas">Cota de Escamas/Brunea</option>
                 <option value="couraca">Couraça</option>
                 <option value="armaduraDePlacas">Armadura de Placas</option>
-                <option value="armaduraCompleta">Armadura Completa</option>
-                <option value="armaduraDeEscamas">Armadura de Escamas</option>
-                <option value="armaduraDeCouro">Armadura de Couro</option>
+                <option value="armaduraTala">Armadura de Tala</option>
+                <option value="cotaAneis">Cota de Anéis</option>
 
-              
-            </select>
-            </p>
-            <p>Escudo <select class="dropdown" id="input_escudo">
+            </select></p>
+
+            <p>Escudo <select class="dropdown" id="input_escudo" onchange="saveAtributos()">
                 <option value="">Sem escudo</option>
                 <option value="escudoleve">Escudo Leve</option>
                 <option value="escudopesado">Escudo Pesado</option>
-                <option value="escudoDeCorpo">Escudo de Corpo </option>
-               
+                <option value="escudoDeCorpo">Escudo de Corpo </option>   
             </select></p>
+
             <div id="armas">
                 <p>Arma Primária </p>
                 <input type="text" id="input_armaPrimaria" class="inputTextoMedio" placeholder="Digite a arma primária aqui..."><input type="text" class="inputTextoMedio" id="danoArmaPrimaria" placeholder="Dano..."> <input type="text" class="inputTextoMedio" id="efeitoArmaPrimaria" placeholder="Efeito...">
@@ -401,6 +400,209 @@
         document.getElementById('ai_modInt').innerHTML = modInt;
         document.getElementById('ai_modSab').innerHTML = modSab;
         document.getElementById('ai_modCar').innerHTML = modCar;
+
+        //iniciativa
+
+        document.getElementById('ai_iniciativa').innerHTML = "+" + modDes;
+
+        //
+        let boxHabAcro = document.getElementById('boxHabAcrobacia').checked;;
+        let habAcro = document.getElementById('ai_habAcrobacia').innerHTML;
+        let proeficiencia = parseInt(document.getElementById('ai_proeficiencia').innerHTML, 10) || 0; 
+        
+        if (boxHabAcro) {
+            habAcro = modDes + proeficiencia;
+            document.getElementById('ai_habAcrobacia').innerHTML = habAcro;
+        } else {
+            habAcro = modDes;
+            document.getElementById('ai_habAcrobacia').innerHTML = habAcro;
+        }
+        let boxHabArcanismo = document.getElementById('boxHabArcanismo').checked;
+        let habArcanismo = document.getElementById('ai_habArcanismo').innerHTML;
+        if (boxHabArcanismo) {
+            habArcanismo = modInt + proeficiencia;
+            document.getElementById('ai_habArcanismo').innerHTML = habArcanismo;
+        } else {
+            habArcanismo = modInt;
+            document.getElementById('ai_habArcanismo').innerHTML = habArcanismo;
+        }
+        let boxHabAtletismo = document.getElementById('boxHabAtletismo').checked;
+        let habAtletismo = document.getElementById('ai_habAtletismo').innerHTML;
+        if (boxHabAtletismo) {
+            habAtletismo = modFor + proeficiencia;
+            document.getElementById('ai_habAtletismo').innerHTML = habAtletismo;
+        } else {
+            habAtletismo = modFor;
+            document.getElementById('ai_habAtletismo').innerHTML = habAtletismo;
+        }
+        let boxHabAtuacao = document.getElementById('boxHabAtuacao').checked;
+        let habAtuacao = document.getElementById('ai_habAtuacao').innerHTML;
+        if (boxHabAtuacao) {
+            habAtuacao = modCar + proeficiencia;
+            document.getElementById('ai_habAtuacao').innerHTML = habAtuacao;
+        } else {
+            habAtuacao = modCar;
+            document.getElementById('ai_habAtuacao').innerHTML = habAtuacao;
+        }
+        let boxHabEnganacao = document.getElementById('boxHabEnganacao').checked;
+        let habEnganacao = document.getElementById('ai_habEnganacao').innerHTML;
+        if (boxHabEnganacao) {
+            habEnganacao = modCar + proeficiencia;
+            document.getElementById('ai_habEnganacao').innerHTML = habEnganacao;
+        } else {
+            habEnganacao = modCar;
+            document.getElementById('ai_habEnganacao').innerHTML = habEnganacao;
+        }
+        let boxHabLidarAnimais = document.getElementById('boxHabLidarAnimais').checked;
+        let habLidarAnimais = document.getElementById('ai_habLidarAnimais').innerHTML;
+        if (boxHabLidarAnimais) {
+            habLidarAnimais = modSab + proeficiencia;
+            document.getElementById('ai_habLidarAnimais').innerHTML = habLidarAnimais;
+        } else {
+            habLidarAnimais = modSab;
+            document.getElementById('ai_habLidarAnimais').innerHTML = habLidarAnimais;
+        }
+        let boxHabIntimidacao = document.getElementById('boxHabIntimidacao').checked;
+        let habIntimidacao = document.getElementById('ai_habIntimidacao').innerHTML;
+        if (boxHabIntimidacao) {
+            habIntimidacao = modCar + proeficiencia;
+            document.getElementById('ai_habIntimidacao').innerHTML = habIntimidacao;
+        } else {
+            habIntimidacao = modCar;
+            document.getElementById('ai_habIntimidacao').innerHTML = habIntimidacao;
+        }
+        let boxHabIntuicao = document.getElementById('boxHabIntuicao').checked;
+        let habIntuicao = document.getElementById('ai_habIntuicao').innerHTML;
+        if (boxHabIntuicao) {
+            habIntuicao = modSab + proeficiencia;
+            document.getElementById('ai_habIntuicao').innerHTML = habIntuicao;
+        } else {
+            habIntuicao = modSab;
+            document.getElementById('ai_habIntuicao').innerHTML = habIntuicao;
+        }
+        let boxHabInvestigacao = document.getElementById('boxHabInvestigacao').checked;
+        let habInvestigacao = document.getElementById('ai_habInvestigacao').innerHTML;
+        if (boxHabInvestigacao) {
+            habInvestigacao = modInt + proeficiencia;
+            document.getElementById('ai_habInvestigacao').innerHTML = habInvestigacao;
+        } else {
+            habInvestigacao = modInt;
+            document.getElementById('ai_habInvestigacao').innerHTML = habInvestigacao;
+        }
+        let boxHabMedicina = document.getElementById('boxHabMedicina').checked;
+        let habMedicina = document.getElementById('ai_habMedicina').innerHTML;
+        if (boxHabMedicina) {
+            habMedicina = modSab + proeficiencia;
+            document.getElementById('ai_habMedicina').innerHTML = habMedicina;
+        } else {
+            habMedicina = modSab;
+            document.getElementById('ai_habMedicina').innerHTML = habMedicina;
+        }
+        let boxHabPercepção = document.getElementById('boxHabPercepcao').checked;
+        let habPercepção = document.getElementById('ai_habPercepcao').innerHTML;
+        if (boxHabPercepção) {
+            habPercepção = modSab + proeficiencia;
+            document.getElementById('ai_habPercepcao').innerHTML = habPercepção;
+        } else {
+            habPercepção = modSab;
+            document.getElementById('ai_habPercepcao').innerHTML = habPercepção;
+        }
+        let boxHabPersuasao = document.getElementById('boxHabPersuasao').checked;
+        let habPersuasao = document.getElementById('ai_habPersuasao').innerHTML;
+        if (boxHabPersuasao) {
+            habPersuasao = modCar + proeficiencia;
+            document.getElementById('ai_habPersuasao').innerHTML = habPersuasao;
+        } else {
+            habPersuasao = modCar;
+            document.getElementById('ai_habPersuasao').innerHTML = habPersuasao;
+        }
+        let boxHabReligiao = document.getElementById('boxHabReligiao').checked;
+        let habReligiao = document.getElementById('ai_habReligiao').innerHTML;
+        if (boxHabReligiao) {
+            habReligiao = modInt + proeficiencia;
+            document.getElementById('ai_habReligiao').innerHTML = habReligiao;
+        } else {
+            habReligiao = modInt;
+            document.getElementById('ai_habReligiao').innerHTML = habReligiao;
+        }
+        let boxHabSobrevivencia = document.getElementById('boxHabSobrevivencia').checked;
+        let habSobrevivencia = document.getElementById('ai_habSobrevivencia').innerHTML;
+        if (boxHabSobrevivencia) {
+            habSobrevivencia = modSab + proeficiencia;
+            document.getElementById('ai_habSobrevivencia').innerHTML = habSobrevivencia;
+        } else {
+            habSobrevivencia = modSab;
+            document.getElementById('ai_habSobrevivencia').innerHTML = habSobrevivencia;
+        }
+
+        /*Inicio Percepção Passiva*/
+        proeficiencia = document.getElementById('ai_proeficiencia').innerHTML; // Obter o valor do bônus de proficiência geral
+        const numProeficiencia = parseInt(proeficiencia, 10); // Converter para número
+        
+        if (boxHabPercepção){
+            sabPassiva = 10 + parseInt(proeficiencia,10) + modSab
+        } else {
+            sabPassiva = 10 + modSab
+        }
+        document.getElementById('ai_sabPassiva').innerHTML = sabPassiva;
+        /* Fim Percepção Passiva */
+
+        let boxSalvaForca = document.getElementById('boxSalvaForca').checked;
+        let salvaForca = document.getElementById('ai_forcaSalvaguarda').innerHTML;
+        if (boxSalvaForca) {
+            salvaForca = modFor + proeficiencia;
+            document.getElementById('ai_forcaSalvaguarda').innerHTML = salvaForca;
+        } else {
+            salvaForca = modFor;
+            document.getElementById('ai_forcaSalvaguarda').innerHTML = salvaForca;
+        }
+        let boxSalvaDestreza = document.getElementById('boxSalvaDestreza').checked;
+        let salvaDestreza = document.getElementById('ai_destrezaSalvaguarda').innerHTML;
+        if (boxSalvaDestreza) {
+            salvaDestreza = modDes + proeficiencia;
+            document.getElementById('ai_destrezaSalvaguarda').innerHTML = salvaDestreza;
+        } else {
+            salvaDestreza = modDes;
+            document.getElementById('ai_destrezaSalvaguarda').innerHTML = salvaDestreza;
+        }
+        let boxSalvaConstituicao = document.getElementById('boxSalvaConstituicao').checked;
+        let salvaConstituicao = document.getElementById('ai_constituicaoSalvaguarda').innerHTML;
+        if (boxSalvaConstituicao) {
+            salvaConstituicao = modCons + proeficiencia;
+            document.getElementById('ai_constituicaoSalvaguarda').innerHTML = salvaConstituicao;
+        } else {
+            salvaConstituicao = modCons;
+            document.getElementById('ai_constituicaoSalvaguarda').innerHTML = salvaConstituicao;
+        }
+        let boxSalvaInteligencia = document.getElementById('boxSalvaInteligencia').checked;
+        let salvaInteligencia = document.getElementById('ai_inteligenciaSalvaguarda').innerHTML;
+        if (boxSalvaInteligencia) {
+            salvaInteligencia = modInt + proeficiencia;
+            document.getElementById('ai_inteligenciaSalvaguarda').innerHTML = salvaInteligencia;
+        } else {
+            salvaInteligencia = modInt;
+            document.getElementById('ai_inteligenciaSalvaguarda').innerHTML = salvaInteligencia;
+        }
+        let boxSalvaSabedoria = document.getElementById('boxSalvaSabedoria').checked;
+        let salvaSabedoria = document.getElementById('ai_sabedoriaSalvaguarda').innerHTML;
+        if (boxSalvaSabedoria) {
+            salvaSabedoria = modSab + proeficiencia;
+            document.getElementById('ai_sabedoriaSalvaguarda').innerHTML = salvaSabedoria;
+        } else {
+            salvaSabedoria = modSab;
+            document.getElementById('ai_sabedoriaSalvaguarda').innerHTML = salvaSabedoria;
+        }
+        let boxSalvaCarisma = document.getElementById('boxSalvaCarisma').checked;
+        let salvaCarisma = document.getElementById('ai_carismaSalvaguarda').innerHTML;
+        if (boxSalvaCarisma) {
+            salvaCarisma = modCar + proeficiencia;
+            document.getElementById('ai_carismaSalvaguarda').innerHTML = salvaCarisma;
+        } else {
+            salvaCarisma = modCar;
+            document.getElementById('ai_carismaSalvaguarda').innerHTML = salvaCarisma;
+        }
+
+
         
         /* Inicia saveAtributosCombate */
 
@@ -412,29 +614,52 @@
         let caEscudo = 0;
         let caArmadura = 0;
         let armaduraValue = parseInt(armadura, 10);
+        let modDesMax = modDes;
 
-        if (armadura !== "") {
-            ca = caArmadura 
-            else if (escudo !== "") {
-            ca = ca + caEscudo ;            
-            }
-        document.getElementById('ai_ca').innerHTML = ca;
-        
-        /* Inicio deslocamento*/
-        let deslocamento = document.getElementById('input_deslocamento').value;
-
-         /*Inicio Sabedoria Passiva*/
-         const proPercepcao = false
-        proeficiencia = document.getElementById('ai_proeficiencia').innerHTML; // Obter o valor do bônus de proficiência
-        const numProeficiencia = parseInt(proeficiencia, 10); // Converter para número
-        if (proPercepcao) {
-            sabPassiva = 10 + numProeficiencia + modSab
-        } else {
-            sabPassiva = 10 + modSab
+        if (modDesMax > 2) {
+            modDesMax = 2; // Limitar o modificador de Destreza a +2
         }
-        document.getElementById('ai_sabPassiva').innerHTML = "Sabedoria Passiva: " + sabPassiva;
-        /* Fim Sabedoria Passiva */
-    }
+
+        if (armadura === "acolchoada") {
+            caArmadura = 11 + modDesMax; // CA acolchoada
+        } else if (armadura === "couro") {
+            caArmadura = 11 + modDesMax; // CA couro
+        } else if (armadura === "couroBatido") {
+            caArmadura = 12 + modDesMax; // CA couro batido
+        } else if (armadura === "cotaDeMalha") {
+            caArmadura = 13 + modDesMax; // CA cota de malha
+        } else if (armadura === "peles") {
+            caArmadura = 12 + modDesMax; // CA gibão de peles
+        } else if (armadura === "MalhaCompleta") {
+            caArmadura = 16; // CA malha completa
+        } else if (armadura === "cotaDeEscamas") {
+            caArmadura = 14 + modDesMax; // CA cota de escamas/brunea
+        } else if (armadura === "couraca") {
+            caArmadura = 14 + modDesMax; // CA couraça
+        } else if (armadura === "armaduraDePlacas") {
+            caArmadura = 18; // CA armadura de placas
+        } else if (armadura === "armaduraCompleta") {
+            caArmadura = 20 + modDesMax; // CA armadura completa
+        } else if (armadura === "cotaAneis") {
+            caArmadura = 14; // CA armadura de escamas
+        } else if (armadura === "armaduraTala") {
+            caArmadura = 17; // CA armadura de couro
+        }
+
+        if (armadura !== "") {  
+            ca = caArmadura
+         } else if (escudo !== "") {
+            ca = ca + 2; // CA com escudo;            
+            } else {
+                ca = 10 + modDes; // CA base
+            }  
+ 
+        document.getElementById('ai_ca').innerHTML = ca;
+   
+        //Fim Cálculo de CA
+
+    } 
+    
     function saveAtributosCombate() {
         const classe = document.getElementById('input_raca').value; // Obter o valor da classe
         let sobrecarga = false;
@@ -455,17 +680,29 @@
         if (grandeSobrecarga)
             deslocamento = deslocamento - 6; // Reduzir 6 metros se grande sobrecarregado
 
-        document.getElementById('ai_deslocamento').innerHTML = "Deslocamento: " + deslocamento + " metros";   
+        document.getElementById('ai_deslocamento').innerHTML = deslocamento + " metros";   
         
     }
-    function Salvaguardas(){
-        let proForca = document.getElementById('boxSalvForca').value
-        if (proForca){
-            let salvaForca = modFor + proForca 
-        } else {
-            let salvaForca = modFor
-        }
-        document.getElementById
+
+    function saveEquipamentos(){
+        const hist=0
+    }
+
+    function saveAtaques(){
+        const ataque=1
+    }
+
+    function saveHistoria(){
+        const historia=0
+    }
+    function saveHabilidades(){
+        let acrobacia = document.getElementById('boxHabAcrobacia').checked;
+        let arcanismo = document.getElementById('boxHabArcanismo').checked;
+        const habilidades=0
+
+
+
+
 
     }
 
@@ -479,6 +716,65 @@
             document.getElementById('style').setAttribute('href', 'style_diurno.css');
         }
     }
+
+function classe(){
+let classe = document.getElementById('input_classe').value;
+
+/* Perícias de Classe
+
+Bárbaro: Força e Constituição;
+Bardo: Destreza e Carisma;
+Bruxo: Sabedoria e Carisma;
+Clérigo: Sabedoria e Carisma;
+Druida: Inteligência e Sabedoria;
+Feiticeiro: Constituição e Carisma;
+Guardião: Força e Destreza.
+Guerreiro: Força e Constituição;
+Ladino: Destreza e Inteligência;
+Mago: Inteligência e Sabedoria;
+Monge: Força e Destreza;
+Paladino: Sabedoria e Carisma;
+
+*/
+
+}
+
+/* Melhorias
+ - Claculo de Carga e Sobrecarga
+ -Adicionar campos de peso para cada item
+ - Adicionar forma de criar um campo para item para não terem campos limitados
+- Adicionar forma de criar um campo para ataque para não terem campos limitados
+- Estudar antecedentes no novo livro para ver se da direto a algo sempre
+- Estudar caracteristicas e bonus de classe e raça para ver se da direto a algo sempre
+- Adicionar campo de bonus de ataque
+
+- 
+Armas: e ataque info:
+Attack/Weapon Name					
+"Damage Dado"		
+"Damage type"	
+"Proficiency Category"
+"Range Classification"		
+"Monk Weapon"
+"Enchantment Bonus"
+"Bonus Damage Die"
+"Bonus Damage Type"
+"Attack Ability Override"	
+																													
+Gear info 
+
+Armor/Wearable Name					
+"Armor Class Bonus"		
+"Maximum Dexterity Modifier"		
+Category			
+"Strength Required"		
+"Stealth Dis/advantage"			
+"Enchantment Bonus"				
+"Proficiency Bonus"			
+"Skills Bonus"		
+"Saves Bonus"		
+"Additional Properties"					
+																																							
 
 
 </script>
