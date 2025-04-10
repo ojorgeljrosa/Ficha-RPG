@@ -16,7 +16,7 @@
         <div class="column" id="informacoesBasicas">
             <h2>Informações Básicas</h2>
             <p>Nome do Personagem <input type="text" class="inputTextoLongo" id="input_nomePersonagem" placeholder="Digite o nome aqui..."> </p>
-            <p>Raça <select id="input_raca" name="raca" class="dropdown">
+            <p>Raça <select id="input_raca" name="raca" class="dropdown" onchange="saveAtributosCombate()">
                 <option value="">Selecione uma raça</option>
                 <option value="humano">Humano</option>
                 <option value="elfo">Elfo</option>
@@ -29,7 +29,7 @@
                 <option value="gnomo">Gnomo</option>
                 <option value="feral">Feral</option>
             </select>
-            <p>Classe <select id="input_classe" name="classe" class="dropdown" onchange="saveAtributosCombate()" onchange="classe()">
+            <p>Classe <select id="input_classe" name="classe" class="dropdown" onchange="classe()">
                 <option value="">Selecione uma classe</option>
                 <option value="guerreiro">Guerreiro</option>
                 <option value="barbaro">Bárbaro</option>
@@ -58,7 +58,6 @@
                 <option value="neutro-mau">Neutro e Mau</option>
                 <option value="caotico-mau">Caótico e Mau</option>
             </select>
-            <p>Peso <input type="number" id="input_pesoPersonagem" placeholder="0 Kg"> </p>
             <p>Nome do Jogador <input type="text" class="inputTextoLongo" id="input_nomeJogador" placeholder="Digite o nome do jogador aqui..."> </p>
             <p>Experiência <input type="number" id="input_experiencia" placeholder="Digite a experiência aqui..." onchange="nivel()"> </p>
             <p>Nível <text id="ai_nivel" class="autoIncrement">0</text></p>
@@ -70,16 +69,16 @@
                 <p>Sucessos <input type="checkbox" id="boxSucessoMorte1" class="checkbox" >
                 <input type="checkbox" id="boxSucessoMorte2" class="checkbox" >
                 <input type="checkbox" id="boxSucessoMorte3" class="checkbox" ></p>
-                <p>Falhas <input type="checkbox" id="boxFalhaMorte1" class="checkbox" >
-                    <input type="checkbox" id="boxFalhaMorte2" class="checkbox" >
-                    <input type="checkbox" id="boxFalhaMorte3" class="checkbox" ></p>
+                <p>Falhas <input type="checkbox" id="boxFalhaMorte1" class="checkboxMorte" >
+                    <input type="checkbox" id="boxFalhaMorte2" class="checkboxMorte" >
+                    <input type="checkbox" id="boxFalhaMorte3" class="checkboxMorte" ></p>
             </div>
         </div>
         <button class="button" id="" onclick="alert('Ficha salva com sucesso!')">Salvar Ficha</button>
     </div>
     
     <div class="conteiner">      
-        <div class="column" id = "atributos" onchange="saveAtributos()"> 
+        <div class="column" id = "atributos" onchange="saveAtributos()" onchange="saveEquipamentos()"> 
             <h2>Atributos</h2>
             <p>Força <input type="number" max="20" id="input_forca" placeholder="Digite a força aqui..."> Modificador: <text id="ai_modFor" class="autoIncrement">0</text></p>
             <p>Destreza <input type="number" max="20" id="input_destreza" placeholder="Digite a destreza aqui..."> Modificador: <text id="ai_modDes" class="autoIncrement">0</text></p>
@@ -206,7 +205,7 @@
             <p>Outras Reações <textarea type="text" class="textarea" id="input_outrosReacoes" placeholder="Digite outras reações aqui..."></textarea> </p>
         </div>
         <div class="column" id="equipamentos" onchange="saveEquipamentos()">
-            <h2>Equipamentos</h2>
+            <h2>Equipamentos</h2>   
             <p>Armadura <select class="dropdown" id="input_armadura" onchange="saveAtributos()">
                 <option value="">Sem Armadura</option>
                 <option value="acolchoada">Acolchoada</option>
@@ -224,23 +223,23 @@
             </select></p>
 
             <p>Escudo <select class="dropdown" id="input_escudo" onchange="saveAtributos()">
-                <option value="">Sem escudo</option>
-                <option value="escudoleve">Escudo Leve</option>
-                <option value="escudopesado">Escudo Pesado</option>
-                <option value="escudoDeCorpo">Escudo de Corpo </option>   
+                <option value="">Não</option>
+                <option value="sim">Sim</option>
             </select></p>
 
             <div id="armas">
                 <p>Arma Primária </p>
-                <input type="text" id="input_armaPrimaria" class="inputTextoMedio" placeholder="Digite a arma primária aqui..."><input type="text" class="inputTextoMedio" id="danoArmaPrimaria" placeholder="Dano..."> <input type="text" class="inputTextoMedio" id="efeitoArmaPrimaria" placeholder="Efeito...">
+                <input type="text" id="input_armaPrimaria" class="inputTextoMedio" placeholder="Digite a arma primária aqui..."><input type="text" class="inputTextoCurto" id="danoArmaPrimaria" placeholder="Dano..."> <input type="text" class="inputTextoMedio" id="efeitoArmaPrimaria" placeholder="Efeito..."> <input type="number" class="inputTextoMedio peso" id="pesoArmaPrimaria" placeholder="Peso..."> Kg
                 <p>Arma Secundária</p>
-                <input type="text" class="inputTextoMedio" id="input_armaSecundaria" placeholder="Digite a arma secundária aqui..."><input type="text" class="inputTextoMedio" id="danoArmaSecundaria" placeholder="Dano..."> <input type="text" class="inputTextoMedio" id="efeitoArmaSecundaria" placeholder="Efeito...">
+                <input type="text" class="inputTextoMedio" id="input_armaSecundaria" placeholder="Digite a arma secundária aqui..."><input type="text" class="inputTextoCurto" id="danoArmaSecundaria" placeholder="Dano..."> <input type="text" class="inputTextoMedio" id="efeitoArmaSecundaria" placeholder="Efeito..."> <input type="number" class="inputTextoMedio peso" id="pesoArmaSecundaria" placeholder="Peso..."> Kg
             </div>    
             <p>Itens Mágicos <textarea type="text" class="textarea" id="input_itensMagicos" placeholder="Digite os itens mágicos aqui..."></textarea> </p>
             <p>Outros Itens <textarea type="text" class="textarea" id="input_outrosItens" placeholder="Digite outros itens aqui..."></textarea> </p>
             <p><label for="input_moedaOuro">Moedas de Ouro:</label> <input type="number" id="input_moedaOuro" placeholder="0"></p> 
             <p><label for="input_moedaPrata">Moedas de Prata:</label> <input type="number" id="input_moedaPrata" placeholder="0"></p>
             <p><label for="input_moedaCobre">Moedas de Cobre:</label> <input type="number" id="input_moedaCobre" placeholder="0"></p>
+            <p>Peso Total <text id="ai_pesoTotal" class="autoIncrement">0</text></p>
+            <text id="sobrecarga"></text>    
         </div>
         <button class="button" id="" onclick="alert('Ficha salva com sucesso!')">Salvar Ficha</button>
     </div> 
@@ -403,7 +402,7 @@
 
         //iniciativa
 
-        document.getElementById('ai_iniciativa').innerHTML = "+" + modDes;
+        document.getElementById('ai_iniciativa').innerHTML = + modDes;
 
         //
         let boxHabAcro = document.getElementById('boxHabAcrobacia').checked;;
@@ -661,31 +660,69 @@
     } 
     
     function saveAtributosCombate() {
-        const classe = document.getElementById('input_raca').value; // Obter o valor da classe
-        let sobrecarga = false;
-        let grandeSobrecarga = false;
+        const raca = document.getElementById('input_raca').value; // Obter o valor da classe
+        
 
-        if (classe == "anao" || classe == "gnomo" || classe == "halfling") {
+        if (raca == "anao" || raca == "gnomo" || raca == "halfling") {
             deslocamento = 7.5;
-        } else if (classe === "elfo" || classe === "meioElfo" || classe === "draconato" || classe === "orc" || classe === "humano") {
+        } else if (raca === "elfo" || raca === "meioElfo" || raca === "draconato" || raca === "orc" || raca === "humano") {
             deslocamento = 9;
-        } else if (classe === "feral" || classe === "troll") {
+        } else if (raca === "feral" || raca === "troll") {
             deslocamento = 10.5;
         } else {
             deslocamento = 9;
         }
-        
-        if (sobrecarga)
-            deslocamento = deslocamento - 3; // Reduzir 3 metros se sobrecarregado
-        if (grandeSobrecarga)
-            deslocamento = deslocamento - 6; // Reduzir 6 metros se grande sobrecarregado
-
-        document.getElementById('ai_deslocamento').innerHTML = deslocamento + " metros";   
-        
+        if (deslocamento < 0) {
+            deslocamento = 0; // Ensure deslocamento is non-negative
+        }
+        document.getElementById('ai_deslocamento').innerHTML = deslocamento + " metros"; 
+ 
+   
     }
 
     function saveEquipamentos(){
-        const hist=0
+        let deslocamento = parseInt(document.getElementById('ai_deslocamento').innerHTML.replace(" metros", ""), 10);
+        const forca = parseInt(document.getElementById('input_forca').value, 10) || 0; // Obter Força
+        let pesoMaximoSobrecarga = forca*2.5; // Peso máximo permitido
+        let pesoMaximoGrandeSobrecarga = forca*5; // Peso máximo permitido
+        let pesoArmaPrimaria = parseFloat(document.getElementById('pesoArmaPrimaria').value) || 0;
+        let pesoArmaSecundaria = parseFloat(document.getElementById('pesoArmaSecundaria').value) || 0;   
+        let pesoArmadura = parseFloat(document.getElementById('input_armadura').value) || 0;
+        let pesoEscudo = parseFloat(document.getElementById('input_escudo').value) || 0;
+        let pesoTotal = document.getElementsByClassName('peso');
+        let pesoExtra = 0; // Inicializar pesoExtra como 0
+        let pesoFinal = 0; // Inicializar peso como 0
+
+        for (let i = 0; i < pesoTotal.length; i++) {
+            let pesoParcial = parseFloat(pesoTotal[i].value) || 0;
+                pesoParcial = parseFloat(pesoTotal[i].value) || 0; // Garantir que o valor seja numérico
+                pesoFinal += pesoParcial;
+        }
+        
+
+        document.getElementById('ai_pesoTotal').innerHTML = pesoFinal + " Kg"; // Atualizar o peso total na interface
+        updateDeslocamentoESobrecarga(pesoFinal, pesoMaximoSobrecarga, pesoMaximoGrandeSobrecarga, deslocamento);
+
+        function updateDeslocamentoESobrecarga(pesoFinal, pesoMaximoSobrecarga, pesoMaximoGrandeSobrecarga, deslocamento) {
+            let pesoExtra = 0;
+            if (pesoFinal > pesoMaximoSobrecarga && pesoFinal <= pesoMaximoGrandeSobrecarga) {
+                deslocamento = Math.max(0, deslocamento - 3); // Reduzir 3 metros se sobrecarregado
+                pesoExtra = pesoFinal - pesoMaximoSobrecarga;
+                document.getElementById('sobrecarga').innerHTML = "Você está com uma sobrecarga de " + pesoExtra + "Kg"; // Atualizar mensagem
+            } else if (pesoFinal > pesoMaximoGrandeSobrecarga) {
+                deslocamento = Math.max(0, deslocamento - 6); // Reduzir 6 metros se grande sobrecarregado
+                pesoExtra = pesoFinal - pesoMaximoGrandeSobrecarga;
+                document.getElementById('sobrecarga').innerHTML = "Você está com uma grande sobrecarga de " + pesoExtra + "Kg"; // Atualizar mensagem
+            } else {
+                document.getElementById('sobrecarga').innerHTML = ""; // Limpar mensagem de sobrecarga
+            }
+            document.getElementById('ai_deslocamento').innerHTML = deslocamento + " metros"; // Atualizar deslocamento
+        }
+
+
+        document.getElementById('ai_deslocamento').innerHTML = deslocamento + " metros"; 
+
+
     }
 
     function saveAtaques(){
@@ -699,11 +736,6 @@
         let acrobacia = document.getElementById('boxHabAcrobacia').checked;
         let arcanismo = document.getElementById('boxHabArcanismo').checked;
         const habilidades=0
-
-
-
-
-
     }
 
     let noturnoAtv = false;
@@ -720,62 +752,7 @@
 function classe(){
 let classe = document.getElementById('input_classe').value;
 
-/* Perícias de Classe
-
-Bárbaro: Força e Constituição;
-Bardo: Destreza e Carisma;
-Bruxo: Sabedoria e Carisma;
-Clérigo: Sabedoria e Carisma;
-Druida: Inteligência e Sabedoria;
-Feiticeiro: Constituição e Carisma;
-Guardião: Força e Destreza.
-Guerreiro: Força e Constituição;
-Ladino: Destreza e Inteligência;
-Mago: Inteligência e Sabedoria;
-Monge: Força e Destreza;
-Paladino: Sabedoria e Carisma;
-
-*/
-
 }
-
-/* Melhorias
- - Claculo de Carga e Sobrecarga
- -Adicionar campos de peso para cada item
- - Adicionar forma de criar um campo para item para não terem campos limitados
-- Adicionar forma de criar um campo para ataque para não terem campos limitados
-- Estudar antecedentes no novo livro para ver se da direto a algo sempre
-- Estudar caracteristicas e bonus de classe e raça para ver se da direto a algo sempre
-- Adicionar campo de bonus de ataque
-
-- 
-Armas: e ataque info:
-Attack/Weapon Name					
-"Damage Dado"		
-"Damage type"	
-"Proficiency Category"
-"Range Classification"		
-"Monk Weapon"
-"Enchantment Bonus"
-"Bonus Damage Die"
-"Bonus Damage Type"
-"Attack Ability Override"	
-																													
-Gear info 
-
-Armor/Wearable Name					
-"Armor Class Bonus"		
-"Maximum Dexterity Modifier"		
-Category			
-"Strength Required"		
-"Stealth Dis/advantage"			
-"Enchantment Bonus"				
-"Proficiency Bonus"			
-"Skills Bonus"		
-"Saves Bonus"		
-"Additional Properties"					
-																																							
-
 
 </script>
 </body>
