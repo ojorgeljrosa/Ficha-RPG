@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//Users/jorgerosa/Documents/Repositórios/Ficha-RPG/**)"
+    ]
+  }
+}
